@@ -39,7 +39,10 @@ function App() {
         <section className="relative px-4 pt-8 pb-20">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-between mb-12">
-              <img src="/wizjock-logo.png" alt="WizJock" className="h-32 lg:h-40 w-auto object-contain" />
+              <div className="flex items-center gap-3">
+                <img src="/wizjock-logo.png" alt="WizJock" className="h-20 lg:h-24 w-auto" />
+                <span className="text-3xl lg:text-4xl font-black text-white">WIZJOCK</span>
+              </div>
               <a href="#coming-soon" className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-lg text-base">
                 GET STARTED
               </a>
@@ -99,12 +102,8 @@ function App() {
                   <img
                     src="/slips/slip1.png"
                     alt="Recent win"
-                    className="w-full aspect-[9/16] object-contain bg-gray-900 rounded-lg mb-4"
+                    className="w-full aspect-[9/16] object-contain bg-gray-900 rounded-lg"
                   />
-                  <div className="text-center">
-                    <div className="text-3xl font-black text-green-400 mb-1">+$3,240</div>
-                    <div className="text-sm text-gray-400">4-leg parlay • +850 odds</div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -125,25 +124,13 @@ function App() {
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                { num: 1, amount: 2840 },
-                { num: 2, amount: 1650 },
-                { num: 3, amount: 3240 },
-                { num: 4, amount: 890 },
-                { num: 5, amount: 1920 },
-                { num: 6, amount: 2150 },
-                { num: 1, amount: 1480 },
-                { num: 2, amount: 2670 }
-              ].map((slip, idx) => (
+              {[1, 2, 3, 4, 5, 6, 1, 2].map((num, idx) => (
                 <div key={idx} className="bg-gray-800 border border-gray-700 rounded-lg p-3 hover:border-cyan-500/50 transition">
                   <img
-                    src={`/slips/slip${slip.num}.png`}
+                    src={`/slips/slip${num}.png`}
                     alt={`Win ${idx + 1}`}
-                    className="w-full aspect-[9/16] object-contain bg-gray-900 rounded mb-2"
+                    className="w-full aspect-[9/16] object-contain bg-gray-900 rounded"
                   />
-                  <div className="text-center">
-                    <div className="text-green-400 font-bold">+${slip.amount.toLocaleString()}</div>
-                  </div>
                 </div>
               ))}
             </div>
@@ -223,6 +210,66 @@ function App() {
                   <h4 className="text-lg font-bold mb-2">Win & Build Bankroll</h4>
                   <p className="text-gray-400 text-sm">Place your bets, track results, and watch your bankroll grow consistently.</p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What You Get */}
+        <section className="py-20 px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl lg:text-5xl font-black mb-4">WHAT YOU GET</h2>
+              <p className="text-xl text-gray-400">Everything you need to bet like a professional</p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
+                <div className="text-3xl mb-3">📱</div>
+                <h3 className="text-xl font-bold mb-3">Daily Picks Delivered</h3>
+                <p className="text-gray-400 text-sm">
+                  Wake up to curated picks in your inbox and WhatsApp. Each pick includes the game, bet type, odds, confidence level, and recommended unit size.
+                </p>
+              </div>
+
+              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
+                <div className="text-3xl mb-3">📈</div>
+                <h3 className="text-xl font-bold mb-3">Live Line Alerts</h3>
+                <p className="text-gray-400 text-sm">
+                  Get notified when lines move in your favor or when breaking news impacts a game. Time-sensitive opportunities sent directly to you.
+                </p>
+              </div>
+
+              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
+                <div className="text-3xl mb-3">💬</div>
+                <h3 className="text-xl font-bold mb-3">Private Community</h3>
+                <p className="text-gray-400 text-sm">
+                  Access to our members-only Discord and WhatsApp groups. Share insights, discuss picks, and learn from other sharp bettors.
+                </p>
+              </div>
+
+              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
+                <div className="text-3xl mb-3">📊</div>
+                <h3 className="text-xl font-bold mb-3">Performance Dashboard</h3>
+                <p className="text-gray-400 text-sm">
+                  Track every pick with detailed analytics. See your ROI, win rate by sport, best bet types, and bankroll growth over time.
+                </p>
+              </div>
+
+              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
+                <div className="text-3xl mb-3">🎓</div>
+                <h3 className="text-xl font-bold mb-3">Betting Education</h3>
+                <p className="text-gray-400 text-sm">
+                  Learn the strategies pros use. Weekly breakdowns on bankroll management, line shopping, hedging, and identifying value.
+                </p>
+              </div>
+
+              <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
+                <div className="text-3xl mb-3">🔒</div>
+                <h3 className="text-xl font-bold mb-3">Verified Results</h3>
+                <p className="text-gray-400 text-sm">
+                  Full transparency. Every pick is timestamped and tracked. No edited screenshots or fake records—just real, documented results.
+                </p>
               </div>
             </div>
           </div>
