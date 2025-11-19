@@ -45,6 +45,29 @@ function App() {
             <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-400"></div>
           </div>
 
+          {/* Floating Sport Icons */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {/* Football */}
+            <div className="absolute top-20 left-[15%] text-6xl opacity-10 animate-float">🏈</div>
+            <div className="absolute bottom-32 right-[20%] text-5xl opacity-10 animate-float-delayed">🏈</div>
+            
+            {/* Basketball */}
+            <div className="absolute top-40 right-[15%] text-6xl opacity-10 animate-float-slow">🏀</div>
+            <div className="absolute bottom-40 left-[25%] text-5xl opacity-10 animate-float">🏀</div>
+            
+            {/* Boxing/MMA */}
+            <div className="absolute top-[60%] left-[10%] text-5xl opacity-10 animate-float-delayed">🥊</div>
+            <div className="absolute top-[30%] right-[25%] text-6xl opacity-10 animate-float-slow">🥊</div>
+            
+            {/* Trophy/Winner */}
+            <div className="absolute bottom-[25%] right-[10%] text-5xl opacity-10 animate-float">🏆</div>
+            <div className="absolute top-[50%] left-[20%] text-4xl opacity-10 animate-float-slow">🏆</div>
+            
+            {/* Additional Sports */}
+            <div className="absolute top-[70%] right-[30%] text-5xl opacity-10 animate-float-delayed">⚡</div>
+            <div className="absolute top-[25%] left-[30%] text-4xl opacity-10 animate-float">💰</div>
+          </div>
+
           <div className="section relative z-10 text-center">
             <div className={`${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
               <div className="flex justify-center mb-8">
@@ -361,7 +384,7 @@ function App() {
               How Our <span className="gradient-text">AI System</span> Works
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From raw data to winning picks in milliseconds. Here's a behind-the-scenes look at our process 
+              From raw data to winning picks in milliseconds. Here's a behind-the-scenes look at our process
               (without giving away our secret sauce).
             </p>
           </div>
@@ -383,7 +406,7 @@ function App() {
                   <div className="text-3xl font-bold gradient-text mb-3">Step 1</div>
                   <h3 className="text-xl font-bold mb-3">Data Ingestion</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    Our system continuously monitors 50+ data sources including player stats, injury reports, weather conditions, 
+                    Our system continuously monitors 50+ data sources including player stats, injury reports, weather conditions,
                     line movements, and historical performance across all major sports leagues.
                   </p>
                   <div className="mt-4 text-xs text-gray-500 font-mono">
@@ -401,7 +424,7 @@ function App() {
                   <div className="text-3xl font-bold gradient-text mb-3">Step 2</div>
                   <h3 className="text-xl font-bold mb-3">AI Analysis</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    Our proprietary machine learning models process the data through multiple neural networks, 
+                    Our proprietary machine learning models process the data through multiple neural networks,
                     identifying patterns and correlations that human analysts would miss. Each model specializes in different aspects.
                   </p>
                   <div className="mt-4 text-xs text-gray-500 font-mono">
@@ -419,7 +442,7 @@ function App() {
                   <div className="text-3xl font-bold gradient-text mb-3">Step 3</div>
                   <h3 className="text-xl font-bold mb-3">Value Detection</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    The system compares our probability calculations against current betting lines to identify discrepancies. 
+                    The system compares our probability calculations against current betting lines to identify discrepancies.
                     When we find significant value (market is wrong), that's when we generate a pick.
                   </p>
                   <div className="mt-4 text-xs text-gray-500 font-mono">
@@ -437,7 +460,7 @@ function App() {
                   <div className="text-3xl font-bold gradient-text mb-3">Step 4</div>
                   <h3 className="text-xl font-bold mb-3">Delivery & Alerts</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    Picks are instantly delivered to members with confidence ratings, unit recommendations, and detailed reasoning. 
+                    Picks are instantly delivered to members with confidence ratings, unit recommendations, and detailed reasoning.
                     Real-time alerts notify you of any changes that could impact your bets.
                   </p>
                   <div className="mt-4 text-xs text-gray-500 font-mono">
@@ -472,8 +495,8 @@ function App() {
                 The <span className="gradient-text">Secret Sauce</span> Stays Secret
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed text-center max-w-3xl mx-auto">
-                While we've shown you the framework, the real magic is in our proprietary algorithms, weighting systems, 
-                and pattern recognition models—developed over years and refined through millions of bets. 
+                While we've shown you the framework, the real magic is in our proprietary algorithms, weighting systems,
+                and pattern recognition models—developed over years and refined through millions of bets.
                 This intellectual property is what gives WizJock members their edge, and it's why we guard it carefully.
               </p>
             </div>
