@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    font-size: 18px; /* Base font size for readability */
+  }
+
+  h1 {
+    @apply text-h1 font-bold mb-4;
+  }
+
+  h2 {
+    @apply text-h2 font-semibold mb-3;
+  }
+
+  h3 {
+    @apply text-h3 font-medium mb-2;
+  }
+}
+
+@layer components {
+  .btn-touch {
+    @apply min-h-touch min-w-touch flex items-center justify-center;
+  }
+}
