@@ -1,7 +1,7 @@
 {
-  "buildCommand": "npm install --prefix packages/client-portal && npm run build --prefix packages/client-portal",
+  "buildCommand": "cd packages/client-portal && npm install --legacy-peer-deps && npm run build",
   "outputDirectory": "packages/client-portal/dist",
-  "installCommand": "npm install --prefix packages/client-portal --legacy-peer-deps",
+  "installCommand": "echo 'Skipping root install'",
   "framework": null,
   "rewrites": [
     {
