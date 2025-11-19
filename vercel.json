@@ -1,0 +1,12 @@
+{
+  "buildCommand": "npm install --prefix packages/client-portal && npm run build --prefix packages/client-portal",
+  "outputDirectory": "packages/client-portal/dist",
+  "installCommand": "npm install --prefix packages/client-portal --legacy-peer-deps",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
