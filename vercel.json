@@ -1,6 +1,6 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "installCommand": "npm install --legacy-peer-deps",
-  "framework": "vite"
+  "buildCommand": "cd packages/client-portal && npm run build",
+  "outputDirectory": "packages/client-portal/dist",
+  "installCommand": "cd packages/client-portal && npm install --legacy-peer-deps",
+  "framework": null
 }
