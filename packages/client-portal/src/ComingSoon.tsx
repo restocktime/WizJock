@@ -25,16 +25,20 @@ function ComingSoon() {
           />
         </div>
 
+        <div className="inline-block bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/50 rounded-full px-6 py-2 mb-6">
+          <span className="text-yellow-400 font-bold text-sm tracking-wider">🔒 INVITE-ONLY ACCESS</span>
+        </div>
+
         <h1 className="text-6xl md:text-7xl font-black mb-6">
-          <span className="gradient-text">Coming Soon</span>
+          <span className="gradient-text">Application Under Review</span>
         </h1>
         
         <p className="text-2xl md:text-3xl text-gray-300 mb-8">
-          We're working hard to bring you the best AI-powered sports betting platform.
+          We're finalizing our exclusive platform for elite bettors.
         </p>
 
         <p className="text-xl text-gray-400 mb-12">
-          Stay connected with us while we prepare to launch!
+          Join our insider community now to be first in line for approval when we launch!
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">

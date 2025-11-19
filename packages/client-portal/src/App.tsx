@@ -79,42 +79,45 @@ function App() {
                   />
                 </div>
               </div>
+              <div className="inline-block bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/50 rounded-full px-6 py-2 mb-6">
+                <span className="text-yellow-400 font-bold text-sm tracking-wider">🔒 INVITE-ONLY • ADMIN APPROVAL REQUIRED</span>
+              </div>
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
                 <span className="gradient-text animate-gradient">WizJock</span>
               </h1>
               <p className="text-2xl md:text-3xl text-gray-300 mb-2">
-                Win Smarter with AI-Powered Picks
+                The Insider's Edge in Sports Betting
               </p>
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                AI-powered sports betting analysis that gives you the winning edge.
-                Expert picks for NFL, NBA, NCAA, and UFC backed by real-time data.
+                Elite, invite-only access to AI-powered insider intelligence. 
+                Join the exclusive circle of bettors who win consistently with information the public doesn't have.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
                 <a href="#coming-soon" className="btn-gradient inline-block">
-                  Start Winning Today
+                  Request Invitation
                 </a>
                 <a href="#coming-soon" className="btn-outline inline-block">
-                  View Sample Picks
+                  See Proof of Wins
                 </a>
               </div>
               <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-400">
                 <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>No Credit Card Required</span>
+                  <span>Invite-Only Access</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>7-Day Free Trial</span>
+                  <span>Admin Approval Required</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Cancel Anytime</span>
+                  <span>Insider Intelligence</span>
                 </div>
               </div>
             </div>
@@ -624,9 +627,9 @@ function App() {
               <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6">
                 1
               </div>
-              <h3 className="text-2xl font-bold mb-3">Sign Up</h3>
+              <h3 className="text-2xl font-bold mb-3">Request Access</h3>
               <p className="text-gray-400">
-                Create your free account in seconds. No credit card required for your 7-day trial.
+                Submit your application. Our team reviews each request to ensure we maintain an elite, serious community.
               </p>
             </div>
 
@@ -634,9 +637,9 @@ function App() {
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6">
                 2
               </div>
-              <h3 className="text-2xl font-bold mb-3">Get Picks</h3>
+              <h3 className="text-2xl font-bold mb-3">Get Approved</h3>
               <p className="text-gray-400">
-                Receive daily expert picks with detailed analysis and confidence ratings for each bet.
+                Once approved by admin, gain immediate access to insider intelligence, real-time alerts, and our exclusive community.
               </p>
             </div>
 
@@ -655,11 +658,14 @@ function App() {
         {/* Pricing Section */}
         <section className="section">
           <div className="text-center mb-16">
+            <div className="inline-block bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/50 rounded-full px-6 py-2 mb-6">
+              <span className="text-yellow-400 font-bold text-sm tracking-wider">💎 EXCLUSIVE MEMBERSHIP TIERS</span>
+            </div>
             <h2 className="text-5xl font-bold mb-4">
-              Simple <span className="gradient-text">Pricing</span>
+              Elite <span className="gradient-text">Membership</span> Pricing
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Choose the plan that fits your betting style
+              Premium pricing for premium intelligence. Limited spots available per tier.
             </p>
           </div>
 
