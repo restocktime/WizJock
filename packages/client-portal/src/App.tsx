@@ -89,7 +89,7 @@ function App() {
                 The Insider's Edge in Sports Betting
               </p>
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Elite, invite-only access to AI-powered insider intelligence. 
+                Elite, invite-only access to AI-powered insider intelligence.
                 Join the exclusive circle of bettors who win consistently with information the public doesn't have.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -131,24 +131,24 @@ function App() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="section">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="glass-card p-6 text-center animate-fadeInUp delay-100">
-              <div className="text-4xl font-bold gradient-text mb-2">67%</div>
-              <div className="text-gray-400 text-sm">Win Rate</div>
-            </div>
-            <div className="glass-card p-6 text-center animate-fadeInUp delay-200">
-              <div className="text-4xl font-bold gradient-text mb-2">50K+</div>
-              <div className="text-gray-400 text-sm">Active Users</div>
-            </div>
-            <div className="glass-card p-6 text-center animate-fadeInUp delay-300">
-              <div className="text-4xl font-bold gradient-text mb-2">$2.4M</div>
-              <div className="text-gray-400 text-sm">Won This Month</div>
-            </div>
-            <div className="glass-card p-6 text-center animate-fadeInUp delay-400">
-              <div className="text-4xl font-bold gradient-text mb-2">24/7</div>
-              <div className="text-gray-400 text-sm">Live Analysis</div>
+        {/* Stats Section - Asymmetric Layout */}
+        <section className="section py-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+              <div className="text-center">
+                <div className="text-5xl md:text-6xl font-black gradient-text mb-1">67%</div>
+                <div className="text-gray-400 text-sm uppercase tracking-wide">Win Rate</div>
+              </div>
+              <div className="hidden md:block w-px h-16 bg-gray-700"></div>
+              <div className="text-center">
+                <div className="text-5xl md:text-6xl font-black gradient-text mb-1">$2.4M</div>
+                <div className="text-gray-400 text-sm uppercase tracking-wide">Won This Month</div>
+              </div>
+              <div className="hidden md:block w-px h-16 bg-gray-700"></div>
+              <div className="text-center">
+                <div className="text-5xl md:text-6xl font-black gradient-text mb-1">50K+</div>
+                <div className="text-gray-400 text-sm uppercase tracking-wide">Members</div>
+              </div>
             </div>
           </div>
         </section>
