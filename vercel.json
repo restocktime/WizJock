@@ -1,12 +1,11 @@
 {
-  "buildCommand": "cd packages/client-portal && npm install --legacy-peer-deps && npm run build",
-  "outputDirectory": "packages/client-portal/dist",
-  "installCommand": "echo 'Skipping root install'",
-  "framework": null,
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
+  "buildCommand": "npm install --legacy-peer-deps && npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install --legacy-peer-deps",
+  "framework": "vite",
+  "git": {
+    "deploymentEnabled": {
+      "main": true
     }
-  ]
+  }
 }
