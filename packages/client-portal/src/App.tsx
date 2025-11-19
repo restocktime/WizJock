@@ -135,7 +135,7 @@ function App() {
                 Why <span className="gradient-text">WizJock</span> Outperforms the Competition
               </h2>
               <p className="text-xl text-gray-300 leading-relaxed">
-                Most betting services rely on gut feelings and outdated statistics. We leverage cutting-edge artificial intelligence 
+                Most betting services rely on gut feelings and outdated statistics. We leverage cutting-edge artificial intelligence
                 and real-time data analytics to give you a measurable edge that translates directly to your bottom line.
               </p>
             </div>
@@ -154,8 +154,8 @@ function App() {
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold mb-3 text-white">Proprietary AI Models, Not Generic Algorithms</h3>
                     <p className="text-gray-300 text-lg leading-relaxed mb-4">
-                      While competitors use basic statistical models anyone can access, WizJock employs proprietary machine learning algorithms 
-                      trained on millions of data points across player performance, team dynamics, weather patterns, injury reports, and historical trends. 
+                      While competitors use basic statistical models anyone can access, WizJock employs proprietary machine learning algorithms
+                      trained on millions of data points across player performance, team dynamics, weather patterns, injury reports, and historical trends.
                       Our AI doesn't just predict outcomes—it identifies value bets that the market consistently undervalues.
                     </p>
                     <div className="flex items-center gap-2 text-green-400 font-semibold">
@@ -181,9 +181,9 @@ function App() {
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold mb-3 text-white">Real-Time Adjustments, Not Static Picks</h3>
                     <p className="text-gray-300 text-lg leading-relaxed mb-4">
-                      Traditional handicappers publish picks once and move on. WizJock continuously monitors line movements, breaking news, 
-                      injury updates, and betting market sentiment in real-time. When conditions change, you're instantly notified—giving you 
-                      the opportunity to adjust your strategy before the market catches up. This dynamic approach has saved our users from 
+                      Traditional handicappers publish picks once and move on. WizJock continuously monitors line movements, breaking news,
+                      injury updates, and betting market sentiment in real-time. When conditions change, you're instantly notified—giving you
+                      the opportunity to adjust your strategy before the market catches up. This dynamic approach has saved our users from
                       countless bad bets and identified last-minute value opportunities worth millions.
                     </p>
                     <div className="flex items-center gap-2 text-green-400 font-semibold">
@@ -209,9 +209,9 @@ function App() {
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold mb-3 text-white">Complete Transparency & Accountability</h3>
                     <p className="text-gray-300 text-lg leading-relaxed mb-4">
-                      Unlike services that cherry-pick their best results or hide losing streaks, every single WizJock pick is tracked, 
-                      timestamped, and publicly verifiable. Our 67% win rate isn't marketing hype—it's independently audited performance 
-                      across thousands of documented bets. You'll see our wins, our losses, and the exact reasoning behind every recommendation. 
+                      Unlike services that cherry-pick their best results or hide losing streaks, every single WizJock pick is tracked,
+                      timestamped, and publicly verifiable. Our 67% win rate isn't marketing hype—it's independently audited performance
+                      across thousands of documented bets. You'll see our wins, our losses, and the exact reasoning behind every recommendation.
                       No smoke and mirrors. No inflated claims. Just honest, data-driven analysis you can trust with your money.
                     </p>
                     <div className="flex items-center gap-2 text-green-400 font-semibold">
@@ -237,9 +237,9 @@ function App() {
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold mb-3 text-white">Bankroll Protection Built Into Every Pick</h3>
                     <p className="text-gray-300 text-lg leading-relaxed mb-4">
-                      Winning picks mean nothing if poor bankroll management wipes you out during a cold streak. WizJock doesn't just tell you 
-                      what to bet—we provide precise unit sizing recommendations based on confidence levels, your bankroll size, and risk tolerance. 
-                      Our system is designed for long-term profitability, not short-term gambling. We've helped thousands of users turn betting 
+                      Winning picks mean nothing if poor bankroll management wipes you out during a cold streak. WizJock doesn't just tell you
+                      what to bet—we provide precise unit sizing recommendations based on confidence levels, your bankroll size, and risk tolerance.
+                      Our system is designed for long-term profitability, not short-term gambling. We've helped thousands of users turn betting
                       from a hobby into a sustainable income stream by teaching disciplined, mathematical approaches to wagering.
                     </p>
                     <div className="flex items-center gap-2 text-green-400 font-semibold">
@@ -259,7 +259,7 @@ function App() {
                 The Bottom Line: <span className="gradient-text">Results That Speak for Themselves</span>
               </h3>
               <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                While other services promise the moon and deliver mediocrity, WizJock has generated over $2.4 million in documented winnings 
+                While other services promise the moon and deliver mediocrity, WizJock has generated over $2.4 million in documented winnings
                 for our community this month alone. Our members aren't just betting—they're building wealth through intelligent, data-driven decisions.
               </p>
               <a href="#coming-soon" className="btn-gradient inline-block text-xl px-12 py-4">
@@ -350,6 +350,139 @@ function App() {
           </div>
 
           <div className="text-center mt-12">
+            <p className="text-gray-400 mb-6">See real results from real bettors</p>
+          </div>
+        </section>
+
+        {/* How Our System Works Demo */}
+        <section className="section">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold mb-6">
+              How Our <span className="gradient-text">AI System</span> Works
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              From raw data to winning picks in milliseconds. Here's a behind-the-scenes look at our process 
+              (without giving away our secret sauce).
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            {/* Process Flow */}
+            <div className="relative">
+              {/* Connecting Line */}
+              <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-green-500 transform -translate-y-1/2 opacity-30"></div>
+
+              <div className="grid lg:grid-cols-4 gap-8 relative z-10">
+                {/* Step 1 */}
+                <div className="glass-card p-8 text-center hover:scale-105 transition-transform">
+                  <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                    </svg>
+                  </div>
+                  <div className="text-3xl font-bold gradient-text mb-3">Step 1</div>
+                  <h3 className="text-xl font-bold mb-3">Data Ingestion</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    Our system continuously monitors 50+ data sources including player stats, injury reports, weather conditions, 
+                    line movements, and historical performance across all major sports leagues.
+                  </p>
+                  <div className="mt-4 text-xs text-gray-500 font-mono">
+                    ~10M data points/day
+                  </div>
+                </div>
+
+                {/* Step 2 */}
+                <div className="glass-card p-8 text-center hover:scale-105 transition-transform">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <div className="text-3xl font-bold gradient-text mb-3">Step 2</div>
+                  <h3 className="text-xl font-bold mb-3">AI Analysis</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    Our proprietary machine learning models process the data through multiple neural networks, 
+                    identifying patterns and correlations that human analysts would miss. Each model specializes in different aspects.
+                  </p>
+                  <div className="mt-4 text-xs text-gray-500 font-mono">
+                    Processing time: &lt;200ms
+                  </div>
+                </div>
+
+                {/* Step 3 */}
+                <div className="glass-card p-8 text-center hover:scale-105 transition-transform">
+                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <div className="text-3xl font-bold gradient-text mb-3">Step 3</div>
+                  <h3 className="text-xl font-bold mb-3">Value Detection</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    The system compares our probability calculations against current betting lines to identify discrepancies. 
+                    When we find significant value (market is wrong), that's when we generate a pick.
+                  </p>
+                  <div className="mt-4 text-xs text-gray-500 font-mono">
+                    Min edge: +5% value
+                  </div>
+                </div>
+
+                {/* Step 4 */}
+                <div className="glass-card p-8 text-center hover:scale-105 transition-transform">
+                  <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                  </div>
+                  <div className="text-3xl font-bold gradient-text mb-3">Step 4</div>
+                  <h3 className="text-xl font-bold mb-3">Delivery & Alerts</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    Picks are instantly delivered to members with confidence ratings, unit recommendations, and detailed reasoning. 
+                    Real-time alerts notify you of any changes that could impact your bets.
+                  </p>
+                  <div className="mt-4 text-xs text-gray-500 font-mono">
+                    Avg delivery: &lt;1 second
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Key Metrics */}
+            <div className="mt-16 grid md:grid-cols-3 gap-6">
+              <div className="glass-card p-6 text-center">
+                <div className="text-4xl font-bold gradient-text mb-2">50+</div>
+                <div className="text-gray-300 font-semibold mb-1">Data Sources</div>
+                <div className="text-sm text-gray-500">Continuously monitored 24/7</div>
+              </div>
+              <div className="glass-card p-6 text-center">
+                <div className="text-4xl font-bold gradient-text mb-2">10M+</div>
+                <div className="text-gray-300 font-semibold mb-1">Data Points Daily</div>
+                <div className="text-sm text-gray-500">Processed in real-time</div>
+              </div>
+              <div className="glass-card p-6 text-center">
+                <div className="text-4xl font-bold gradient-text mb-2">&lt;200ms</div>
+                <div className="text-gray-300 font-semibold mb-1">Analysis Speed</div>
+                <div className="text-sm text-gray-500">From data to decision</div>
+              </div>
+            </div>
+
+            {/* Bottom Explanation */}
+            <div className="mt-12 glass-card p-8">
+              <h3 className="text-2xl font-bold mb-4 text-center">
+                The <span className="gradient-text">Secret Sauce</span> Stays Secret
+              </h3>
+              <p className="text-gray-300 text-lg leading-relaxed text-center max-w-3xl mx-auto">
+                While we've shown you the framework, the real magic is in our proprietary algorithms, weighting systems, 
+                and pattern recognition models—developed over years and refined through millions of bets. 
+                This intellectual property is what gives WizJock members their edge, and it's why we guard it carefully.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* WhatsApp CTA */}
+        <section className="section">
+          <div className="text-center">
             <p className="text-gray-400 mb-6">Join thousands of winning bettors in our exclusive community</p>
             <a
               href="https://chat.whatsapp.com/FgmkVMnR3SH6aTFjO7QL2k"
