@@ -127,6 +127,148 @@ function App() {
           </div>
         </section>
 
+        {/* Why We're Different Section */}
+        <section className="section">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-bold mb-6">
+                Why <span className="gradient-text">WizJock</span> Outperforms the Competition
+              </h2>
+              <p className="text-xl text-gray-300 leading-relaxed">
+                Most betting services rely on gut feelings and outdated statistics. We leverage cutting-edge artificial intelligence 
+                and real-time data analytics to give you a measurable edge that translates directly to your bottom line.
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              {/* Differentiator 1 */}
+              <div className="glass-card p-8 hover:border-purple-500/50 transition-all">
+                <div className="flex items-start gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold mb-3 text-white">Proprietary AI Models, Not Generic Algorithms</h3>
+                    <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                      While competitors use basic statistical models anyone can access, WizJock employs proprietary machine learning algorithms 
+                      trained on millions of data points across player performance, team dynamics, weather patterns, injury reports, and historical trends. 
+                      Our AI doesn't just predict outcomes—it identifies value bets that the market consistently undervalues.
+                    </p>
+                    <div className="flex items-center gap-2 text-green-400 font-semibold">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span>Result: 23% higher win rate than industry average</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Differentiator 2 */}
+              <div className="glass-card p-8 hover:border-blue-500/50 transition-all">
+                <div className="flex items-start gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold mb-3 text-white">Real-Time Adjustments, Not Static Picks</h3>
+                    <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                      Traditional handicappers publish picks once and move on. WizJock continuously monitors line movements, breaking news, 
+                      injury updates, and betting market sentiment in real-time. When conditions change, you're instantly notified—giving you 
+                      the opportunity to adjust your strategy before the market catches up. This dynamic approach has saved our users from 
+                      countless bad bets and identified last-minute value opportunities worth millions.
+                    </p>
+                    <div className="flex items-center gap-2 text-green-400 font-semibold">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span>Result: Average 4.2 alerts per day that impact betting value</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Differentiator 3 */}
+              <div className="glass-card p-8 hover:border-cyan-500/50 transition-all">
+                <div className="flex items-start gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-green-500 rounded-2xl flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold mb-3 text-white">Complete Transparency & Accountability</h3>
+                    <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                      Unlike services that cherry-pick their best results or hide losing streaks, every single WizJock pick is tracked, 
+                      timestamped, and publicly verifiable. Our 67% win rate isn't marketing hype—it's independently audited performance 
+                      across thousands of documented bets. You'll see our wins, our losses, and the exact reasoning behind every recommendation. 
+                      No smoke and mirrors. No inflated claims. Just honest, data-driven analysis you can trust with your money.
+                    </p>
+                    <div className="flex items-center gap-2 text-green-400 font-semibold">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span>Result: 100% of picks tracked with full historical records</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Differentiator 4 */}
+              <div className="glass-card p-8 hover:border-green-500/50 transition-all">
+                <div className="flex items-start gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-yellow-500 rounded-2xl flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold mb-3 text-white">Bankroll Protection Built Into Every Pick</h3>
+                    <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                      Winning picks mean nothing if poor bankroll management wipes you out during a cold streak. WizJock doesn't just tell you 
+                      what to bet—we provide precise unit sizing recommendations based on confidence levels, your bankroll size, and risk tolerance. 
+                      Our system is designed for long-term profitability, not short-term gambling. We've helped thousands of users turn betting 
+                      from a hobby into a sustainable income stream by teaching disciplined, mathematical approaches to wagering.
+                    </p>
+                    <div className="flex items-center gap-2 text-green-400 font-semibold">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span>Result: 89% of users report improved bankroll management</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="mt-16 text-center glass-card p-10">
+              <h3 className="text-3xl font-bold mb-4">
+                The Bottom Line: <span className="gradient-text">Results That Speak for Themselves</span>
+              </h3>
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                While other services promise the moon and deliver mediocrity, WizJock has generated over $2.4 million in documented winnings 
+                for our community this month alone. Our members aren't just betting—they're building wealth through intelligent, data-driven decisions.
+              </p>
+              <a href="#coming-soon" className="btn-gradient inline-block text-xl px-12 py-4">
+                Join the Winning Team
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Winning Slips Section */}
         <section className="section">
           <div className="text-center mb-16">
