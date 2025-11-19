@@ -32,7 +32,7 @@ function App() {
 
         {/* Top Bar - Like FanDuel */}
         <div className="bg-gradient-to-r from-blue-600 to-cyan-500 py-2 px-4 text-center text-sm font-bold">
-          🔥 +18.7% ROI • +$47K AVG MEMBER PROFIT • VERIFIED RESULTS
+          🔥 +18.7% ROI LAST 90 DAYS • +4.2% AVG EV • VERIFIED RESULTS
         </div>
 
         {/* Hero - Bold & Direct */}
@@ -84,8 +84,8 @@ function App() {
                       <div className="text-xs text-gray-400 uppercase">Avg EV Per Bet</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-black text-cyan-400">$47K</div>
-                      <div className="text-xs text-gray-400 uppercase">Avg Member Profit</div>
+                      <div className="text-3xl font-black text-cyan-400">2,847</div>
+                      <div className="text-xs text-gray-400 uppercase">Active Members</div>
                     </div>
                   </div>
                 </div>
@@ -288,12 +288,12 @@ function App() {
                 <div className="text-sm text-gray-400">Avg EV Per Bet</div>
               </div>
               <div>
-                <div className="text-4xl font-black text-blue-400 mb-2">$47K</div>
-                <div className="text-sm text-gray-400">Avg Member Profit</div>
+                <div className="text-4xl font-black text-blue-400 mb-2">1,200+</div>
+                <div className="text-sm text-gray-400">Tracked Picks</div>
               </div>
               <div>
-                <div className="text-4xl font-black text-orange-400 mb-2">2,847</div>
-                <div className="text-sm text-gray-400">Active Members</div>
+                <div className="text-4xl font-black text-orange-400 mb-2">24/7</div>
+                <div className="text-sm text-gray-400">Live Monitoring</div>
               </div>
             </div>
           </div>
