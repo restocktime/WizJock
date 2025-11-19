@@ -1,11 +1,6 @@
 {
   "buildCommand": "npm install --legacy-peer-deps && npm run build",
-  "outputDirectory": "dist",
+  "outputDirectory": "packages/client-portal/dist",
   "installCommand": "npm install --legacy-peer-deps",
-  "framework": "vite",
-  "git": {
-    "deploymentEnabled": {
-      "main": true
-    }
-  }
+  "framework": "vite"
 }
