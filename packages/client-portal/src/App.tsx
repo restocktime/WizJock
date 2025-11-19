@@ -32,15 +32,15 @@ function App() {
 
         {/* Top Bar - Like FanDuel */}
         <div className="bg-gradient-to-r from-blue-600 to-cyan-500 py-2 px-4 text-center text-sm font-bold">
-          🔥 MEMBERS WON $847K THIS WEEK • 67% WIN RATE • JOIN THE WINNING TEAM
+          🔥 58% WIN RATE LAST 30 DAYS • VERIFIED RESULTS • INVITE ONLY
         </div>
 
         {/* Hero - Bold & Direct */}
-        <section className="relative px-4 pt-12 pb-20">
+        <section className="relative px-4 pt-8 pb-20">
           <div className="max-w-7xl mx-auto">
-            <div className="flex items-center justify-between mb-8">
-              <img src="/wizjock-logo.png" alt="WizJock" className="h-24 lg:h-32 w-auto" />
-              <a href="#coming-soon" className="bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-lg text-sm">
+            <div className="flex items-center justify-between mb-12">
+              <img src="/wizjock-logo.png" alt="WizJock" className="h-32 lg:h-40 w-auto object-contain" />
+              <a href="#coming-soon" className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-lg text-base">
                 GET STARTED
               </a>
             </div>
@@ -57,8 +57,8 @@ function App() {
                   </span>
                 </h1>
                 <p className="text-xl text-gray-300 mb-8">
-                  AI-powered sports betting intelligence trusted by 50,000+ serious bettors.
-                  Get the edge the sportsbooks don't want you to have.
+                  Professional sports betting analysis and insider intelligence.
+                  Get the edge sharp bettors use to beat the books.
                 </p>
                 <div className="flex gap-4 mb-8">
                   <a href="#coming-soon" className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold px-8 py-4 rounded-lg text-lg">
@@ -73,16 +73,16 @@ function App() {
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6">
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
-                      <div className="text-3xl font-black text-green-400">67%</div>
-                      <div className="text-xs text-gray-400 uppercase">Win Rate</div>
+                      <div className="text-3xl font-black text-green-400">58%</div>
+                      <div className="text-xs text-gray-400 uppercase">Win Rate L30</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-black text-blue-400">$2.4M</div>
-                      <div className="text-xs text-gray-400 uppercase">Won This Month</div>
+                      <div className="text-3xl font-black text-blue-400">+12.4u</div>
+                      <div className="text-xs text-gray-400 uppercase">Units This Month</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-black text-cyan-400">50K+</div>
-                      <div className="text-xs text-gray-400 uppercase">Members</div>
+                      <div className="text-3xl font-black text-cyan-400">2,847</div>
+                      <div className="text-xs text-gray-400 uppercase">Active Members</div>
                     </div>
                   </div>
                 </div>
@@ -102,8 +102,8 @@ function App() {
                     className="w-full aspect-[9/16] object-contain bg-gray-900 rounded-lg mb-4"
                   />
                   <div className="text-center">
-                    <div className="text-3xl font-black text-green-400 mb-1">+$12,450</div>
-                    <div className="text-sm text-gray-400">5-leg parlay • +2100 odds</div>
+                    <div className="text-3xl font-black text-green-400 mb-1">+$3,240</div>
+                    <div className="text-sm text-gray-400">4-leg parlay • +850 odds</div>
                   </div>
                 </div>
               </div>
@@ -125,15 +125,24 @@ function App() {
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                <div key={num} className="bg-gray-800 border border-gray-700 rounded-lg p-3 hover:border-cyan-500/50 transition">
+              {[
+                { num: 1, amount: 2840 },
+                { num: 2, amount: 1650 },
+                { num: 3, amount: 3240 },
+                { num: 4, amount: 890 },
+                { num: 5, amount: 1920 },
+                { num: 6, amount: 2150 },
+                { num: 1, amount: 1480 },
+                { num: 2, amount: 2670 }
+              ].map((slip, idx) => (
+                <div key={idx} className="bg-gray-800 border border-gray-700 rounded-lg p-3 hover:border-cyan-500/50 transition">
                   <img
-                    src={`/slips/slip${num > 6 ? num - 6 : num}.png`}
-                    alt={`Win ${num}`}
+                    src={`/slips/slip${slip.num}.png`}
+                    alt={`Win ${idx + 1}`}
                     className="w-full aspect-[9/16] object-contain bg-gray-900 rounded mb-2"
                   />
                   <div className="text-center">
-                    <div className="text-green-400 font-bold">+${(Math.random() * 15000 + 1000).toFixed(0)}</div>
+                    <div className="text-green-400 font-bold">+${slip.amount.toLocaleString()}</div>
                   </div>
                 </div>
               ))}
@@ -146,18 +155,18 @@ function App() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl lg:text-5xl font-black mb-4">THE WIZJOCK EDGE</h2>
-              <p className="text-xl text-gray-400">What the sportsbooks don't want you to know</p>
+              <p className="text-xl text-gray-400">Professional analysis meets insider intelligence</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-16">
               <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8">
                 <div className="text-cyan-400 text-4xl mb-4">🧠</div>
-                <h3 className="text-2xl font-bold mb-3">AI That Actually Wins</h3>
+                <h3 className="text-2xl font-bold mb-3">Advanced Analytics</h3>
                 <p className="text-gray-400 mb-4">
-                  Our proprietary AI analyzes 10M+ data points daily—player stats, injury reports, weather, betting trends, line movements, and historical matchups.
+                  Our system analyzes thousands of data points daily—player stats, injury reports, weather, betting trends, line movements, and historical matchups.
                 </p>
                 <p className="text-gray-400">
-                  It finds value bets the market consistently underprices. That's why we maintain a 67% win rate while most bettors lose long-term.
+                  We identify value bets the market underprices. Consistent edge over time is how sharp bettors win.
                 </p>
               </div>
 
@@ -179,7 +188,7 @@ function App() {
                   Every pick comes with a confidence rating and recommended unit size. No guessing. No chasing losses.
                 </p>
                 <p className="text-gray-400">
-                  Our members report 89% better money management. We're building wealth, not gambling.
+                  Proper bankroll management is the difference between winning long-term and going broke.
                 </p>
               </div>
 
@@ -190,7 +199,7 @@ function App() {
                   Every pick is tracked and timestamped. No cherry-picking wins. No hiding losses.
                 </p>
                 <p className="text-gray-400">
-                  Our 67% win rate is independently verified across thousands of documented bets. See the proof in our winning slips above.
+                  All results are verified and documented. See the proof in our winning slips above.
                 </p>
               </div>
             </div>
@@ -224,16 +233,16 @@ function App() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-4xl font-black text-cyan-400 mb-2">67%</div>
-                <div className="text-sm text-gray-400">Overall Win Rate</div>
+                <div className="text-4xl font-black text-cyan-400 mb-2">58%</div>
+                <div className="text-sm text-gray-400">Win Rate L30 Days</div>
               </div>
               <div>
-                <div className="text-4xl font-black text-green-400 mb-2">$847K</div>
-                <div className="text-sm text-gray-400">Won This Week</div>
+                <div className="text-4xl font-black text-green-400 mb-2">+12.4u</div>
+                <div className="text-sm text-gray-400">Units This Month</div>
               </div>
               <div>
-                <div className="text-4xl font-black text-blue-400 mb-2">10M+</div>
-                <div className="text-sm text-gray-400">Data Points Daily</div>
+                <div className="text-4xl font-black text-blue-400 mb-2">1,200+</div>
+                <div className="text-sm text-gray-400">Tracked Picks</div>
               </div>
               <div>
                 <div className="text-4xl font-black text-orange-400 mb-2">24/7</div>
@@ -387,8 +396,8 @@ function App() {
         {/* Final CTA */}
         <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-cyan-500">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl lg:text-5xl font-black mb-6">READY TO START WINNING?</h2>
-            <p className="text-xl mb-8 text-blue-50">Join 50,000+ members who are beating the sportsbooks</p>
+            <h2 className="text-4xl lg:text-5xl font-black mb-6">READY TO GET THE EDGE?</h2>
+            <p className="text-xl mb-8 text-blue-50">Join 2,800+ members betting smarter with insider analysis</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#coming-soon" className="bg-white hover:bg-gray-100 text-blue-600 font-bold px-10 py-5 rounded-lg text-lg">
                 Request Access Now
