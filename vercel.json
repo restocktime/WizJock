@@ -1,6 +1,6 @@
 {
-  "buildCommand": "npm run build --workspace=@sportsbook/client-portal",
+  "buildCommand": "npm run build",
   "outputDirectory": "packages/client-portal/dist",
-  "installCommand": "npm install --workspace=@sportsbook/client-portal",
+  "installCommand": "npm install && cd packages/client-portal && npm install",
   "framework": null
 }
