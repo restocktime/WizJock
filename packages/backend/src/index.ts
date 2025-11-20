@@ -9,6 +9,10 @@ import mongoSanitize from 'express-mongo-sanitize';
 import authRoutes from './routes/auth';
 import adminRoutes from './routes/admin';
 import clientRoutes from './routes/client';
+import applicationsRoutes from './routes/applications';
+import monitoringRoutes from './routes/monitoring';
+import { initializeEmailService } from './services/EmailService';
+import { logger } from './utils/logger';
 
 dotenv.config();
 
@@ -33,6 +37,11 @@ app.use(mongoSanitize());
 
 import { performanceMonitor } from './middleware/performance';
 import { apiLimiter } from './middleware/rateLimiter';
+import { enforceHttps, setSecurityHeaders } from './middleware/httpsRedirect';
+
+// HTTPS enforcement (production only)
+app.use(enforceHttps);
+app.use(setSecurityHeaders);
 
 // Performance monitoring middleware
 app.use(performanceMonitor);
@@ -70,6 +79,12 @@ app.use('/api/admin', adminRoutes);
 // Client routes (public)
 app.use('/api', clientRoutes);
 
+// Applications routes (public)
+app.use('/api/applications', applicationsRoutes);
+
+// Monitoring routes (admin only, except /health)
+app.use('/api/monitoring', monitoringRoutes);
+
 // 404 handler - must be after all routes
 app.use(notFoundHandler);
 
@@ -82,6 +97,22 @@ const startServer = async () => {
     // Connect to Redis
     await connectRedis();
     console.log('Redis connection established');
+
+    // Initialize Email Service
+    const resendApiKey = process.env.RESEND_API_KEY;
+    const fromEmail = process.env.FROM_EMAIL || 'hello@wizjock.com';
+    const adminEmail = process.env.ADMIN_EMAIL || 'team@wizjock.com';
+
+    if (resendApiKey) {
+      initializeEmailService({
+        apiKey: resendApiKey,
+        fromEmail,
+        adminEmail,
+      });
+      logger.info('Email service initialized', { fromEmail, adminEmail });
+    } else {
+      logger.warn('Email service not initialized - RESEND_API_KEY not configured');
+    }
 
     // Start server
     app.listen(PORT, () => {

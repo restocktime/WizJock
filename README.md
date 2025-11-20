@@ -128,6 +128,46 @@ The `docker-compose.yml` file provides:
 
 - **Redis** on port 6379
 
+## Post-Deployment Verification
+
+After deploying to production, run the verification suite to ensure everything is working correctly:
+
+### Quick Verification (15 minutes)
+
+```bash
+# Run automated checks
+./scripts/post-deployment-verification.sh
+
+# Test application flow
+./scripts/test-application-flow.sh
+
+# Verify GA4 setup
+node scripts/verify-ga4-events.js
+```
+
+See `VERIFICATION_QUICK_GUIDE.md` for a condensed checklist.
+
+### Comprehensive Verification
+
+For full verification including Lighthouse audits and 24-hour monitoring:
+
+```bash
+# Run Lighthouse audits (requires lighthouse CLI)
+npm install -g lighthouse
+./scripts/lighthouse-audit.sh
+
+# Start 24-hour monitoring
+./scripts/setup-monitoring.sh
+```
+
+See `POST_DEPLOYMENT_VERIFICATION.md` for the complete verification checklist.
+
+### Verification Documents
+
+- **VERIFICATION_QUICK_GUIDE.md** - 15-minute quick verification
+- **POST_DEPLOYMENT_VERIFICATION.md** - Comprehensive verification checklist
+- **VERIFICATION_SUMMARY.md** - Template for documenting verification results
+
 ## Next Steps
 
 Refer to the implementation plan in `.kiro/specs/unified-sportsbook-platform/tasks.md` for the development roadmap.

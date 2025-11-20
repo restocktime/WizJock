@@ -293,3 +293,36 @@ export interface SportInfo {
 export interface GetSportsResponse {
   sports: SportInfo[];
 }
+
+// Application types
+export type BettingExperience = 'beginner' | 'intermediate' | 'advanced' | 'professional';
+export type ApplicationStatus = 'pending' | 'approved' | 'rejected' | 'contacted';
+
+export interface Application {
+  id: string;
+  fullName: string;
+  email: string;
+  phone: string;
+  bettingExperience: BettingExperience;
+  smsConsent: boolean;
+  status: ApplicationStatus;
+  notes?: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface CreateApplicationRequest {
+  fullName: string;
+  email: string;
+  phone: string;
+  bettingExperience: BettingExperience;
+  smsConsent: boolean;
+}
+
+export interface CreateApplicationResponse {
+  success: boolean;
+  message: string;
+  applicationId?: string;
+  error?: string;
+  details?: string[];
+}

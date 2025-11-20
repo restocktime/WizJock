@@ -10,6 +10,7 @@ import { Performance } from './pages/Performance';
 import { Injuries } from './pages/Injuries';
 import { Intelligence } from './pages/Intelligence';
 import { LineMovements } from './pages/LineMovements';
+import Applications from './pages/Applications';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -84,6 +85,16 @@ function App() {
                 <ProtectedRoute>
                   <Layout>
                     <LineMovements />
+                  </Layout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/applications"
+              element={
+                <ProtectedRoute>
+                  <Layout>
+                    <Applications />
                   </Layout>
                 </ProtectedRoute>
               }

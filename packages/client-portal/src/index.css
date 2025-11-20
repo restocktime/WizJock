@@ -57,6 +57,17 @@
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  * {
+    max-width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -67,6 +78,62 @@
   
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Keyboard Navigation - Visible Focus Indicators */
+  *:focus {
+    outline: 2px solid #00BCD4;
+    outline-offset: 2px;
+  }
+
+  /* Enhanced focus for interactive elements */
+  a:focus,
+  button:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 2px solid #00BCD4;
+    outline-offset: 2px;
+  }
+
+  /* Minimum touch target sizes for mobile accessibility */
+  @media (max-width: 768px) {
+    a,
+    button,
+    input[type="checkbox"],
+    input[type="radio"],
+    select {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Exception for inline links within text */
+    p a,
+    span a,
+    li a {
+      min-height: auto;
+      min-width: auto;
+    }
+  }
+
+  /* Skip to main content link */
+  .skip-to-main {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: #00BCD4;
+    color: #0A1929;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 9999;
+    border-radius: 0 0 0.5rem 0;
+  }
+
+  .skip-to-main:focus {
+    top: 0;
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
   }
 }
 
@@ -380,5 +447,27 @@
 
   .animate-float-delayed {
     animation: floatDelayed 7s ease-in-out infinite 1s;
+  }
+
+  /* Falling logo animation */
+  @keyframes fall {
+    0% {
+      transform: translateY(-100px) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.05;
+    }
+    90% {
+      opacity: 0.05;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-fall {
+    animation: fall linear infinite;
   }
 }
