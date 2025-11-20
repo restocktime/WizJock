@@ -452,22 +452,23 @@
   /* Falling logo animation */
   @keyframes fall {
     0% {
-      transform: translateY(-100px) rotate(0deg);
+      transform: translateY(-150px) rotate(0deg);
       opacity: 0;
     }
-    10% {
+    5% {
       opacity: 0.05;
     }
-    90% {
+    95% {
       opacity: 0.05;
     }
     100% {
-      transform: translateY(100vh) rotate(360deg);
+      transform: translateY(calc(100vh + 150px)) rotate(360deg);
       opacity: 0;
     }
   }
 
   .animate-fall {
     animation: fall linear infinite;
+    will-change: transform, opacity;
   }
 }

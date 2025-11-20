@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import PerformanceDisclaimer from '../components/PerformanceDisclaimer';
 import ComingSoonModal from '../components/ComingSoonModal';
@@ -25,28 +26,28 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
-            <a href="/" className="flex items-center gap-2 sm:gap-3">
+            <Link to="/" className="flex items-center gap-2 sm:gap-3">
               <OptimizedLogo alt="WizJock logo" className="h-8 sm:h-12 w-auto" />
               <span className="text-lg sm:text-2xl font-black text-white">WIZJOCK</span>
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
-              <a href="/about" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
+              <Link to="/about" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
                 About Us
-              </a>
-              <a href="/why-us" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
+              </Link>
+              <Link to="/why-us" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
                 Why Us
-              </a>
-              <a href="/how-it-works" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
+              </Link>
+              <Link to="/how-it-works" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
                 How It Works
-              </a>
-              <a href="/member-experience" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
+              </Link>
+              <Link to="/member-experience" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
                 Member Experience
-              </a>
-              <a href="/contact" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
+              </Link>
+              <Link to="/contact" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
                 Contact
-              </a>
+              </Link>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -68,57 +69,57 @@ export default function LandingPage() {
             </button>
 
             {/* CTA Button - Desktop */}
-            <a 
-              href="/apply" 
+            <Link 
+              to="/apply" 
               onClick={() => trackCTAClick('header')}
               className="hidden lg:flex bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold px-6 py-3 rounded-lg text-sm min-h-[44px] items-center"
               aria-label="Get started with WizJock"
             >
               GET STARTED
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
             <nav className="lg:hidden py-4 border-t border-gray-800" aria-label="Mobile navigation">
               <div className="flex flex-col space-y-4">
-                <a 
-                  href="/about" 
+                <Link 
+                  to="/about" 
                   onClick={closeMobileMenu}
                   className="text-gray-300 hover:text-white transition-colors text-base font-medium py-2"
                 >
                   About Us
-                </a>
-                <a 
-                  href="/why-us" 
+                </Link>
+                <Link 
+                  to="/why-us" 
                   onClick={closeMobileMenu}
                   className="text-gray-300 hover:text-white transition-colors text-base font-medium py-2"
                 >
                   Why Us
-                </a>
-                <a 
-                  href="/how-it-works" 
+                </Link>
+                <Link 
+                  to="/how-it-works" 
                   onClick={closeMobileMenu}
                   className="text-gray-300 hover:text-white transition-colors text-base font-medium py-2"
                 >
                   How It Works
-                </a>
-                <a 
-                  href="/member-experience" 
+                </Link>
+                <Link 
+                  to="/member-experience" 
                   onClick={closeMobileMenu}
                   className="text-gray-300 hover:text-white transition-colors text-base font-medium py-2"
                 >
                   Member Experience
-                </a>
-                <a 
-                  href="/contact" 
+                </Link>
+                <Link 
+                  to="/contact" 
                   onClick={closeMobileMenu}
                   className="text-gray-300 hover:text-white transition-colors text-base font-medium py-2"
                 >
                   Contact
-                </a>
-                <a 
-                  href="/apply" 
+                </Link>
+                <Link 
+                  to="/apply" 
                   onClick={() => {
                     trackCTAClick('mobile_menu');
                     closeMobileMenu();
@@ -126,7 +127,7 @@ export default function LandingPage() {
                   className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold px-6 py-3 rounded-lg text-center min-h-[44px] flex items-center justify-center"
                 >
                   GET STARTED
-                </a>
+                </Link>
               </div>
             </nav>
           )}
@@ -138,23 +139,31 @@ export default function LandingPage() {
       <section className="relative px-4 pt-12 sm:pt-16 pb-20 overflow-hidden" aria-label="Hero section">
         {/* Falling Logos Background Animation */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute animate-fall opacity-5"
-              style={{
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${15 + Math.random() * 10}s`,
-              }}
-            >
-              <OptimizedLogo 
-                alt="" 
-                className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" 
-                aria-hidden="true"
-              />
-            </div>
-          ))}
+          {[...Array(25)].map((_, i) => {
+            // Distribute logos evenly across the animation timeline
+            const delay = (i * 1.2) % 20; // Stagger starts over 20 seconds
+            const duration = 18 + (i % 5) * 2; // Vary duration between 18-26 seconds
+            const leftPosition = (i * 7) % 100; // Distribute across width
+            
+            return (
+              <div
+                key={i}
+                className="absolute animate-fall opacity-5"
+                style={{
+                  left: `${leftPosition}%`,
+                  animationDelay: `${delay}s`,
+                  animationDuration: `${duration}s`,
+                  top: `-${(i % 3) * 50}px`, // Start some logos already in view
+                }}
+              >
+                <OptimizedLogo 
+                  alt="" 
+                  className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" 
+                  aria-hidden="true"
+                />
+              </div>
+            );
+          })}
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
@@ -175,13 +184,13 @@ export default function LandingPage() {
                 Get the edge sharp bettors use to beat the books.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <a 
-                  href="/apply" 
+                <Link 
+                  to="/apply" 
                   onClick={() => trackCTAClick('hero')}
                   className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold px-6 sm:px-8 py-4 rounded-lg text-base sm:text-lg min-h-[44px] flex items-center justify-center"
                 >
                   Request Access
-                </a>
+                </Link>
                 <a 
                   href="https://chat.whatsapp.com/FgmkVMnR3SH6aTFjO7QL2k" 
                   target="_blank" 
@@ -552,13 +561,13 @@ export default function LandingPage() {
                   <span>Email support</span>
                 </li>
               </ul>
-              <a 
-                href="/apply" 
+              <Link 
+                to="/apply" 
                 onClick={() => trackCTAClick('pricing_starter')}
                 className="block w-full bg-white hover:bg-gray-100 text-black font-bold py-3 sm:py-4 rounded-lg text-center transition text-sm sm:text-base min-h-[44px] flex items-center justify-center"
               >
                 Get Started
-              </a>
+              </Link>
             </div>
 
             {/* Pro - Featured */}
@@ -603,13 +612,13 @@ export default function LandingPage() {
                   <span className="font-medium">Live chat access</span>
                 </li>
               </ul>
-              <a 
-                href="/apply" 
+              <Link 
+                to="/apply" 
                 onClick={() => trackCTAClick('pricing_pro')}
                 className="block w-full bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 sm:py-4 rounded-lg text-center transition text-sm sm:text-base min-h-[44px] flex items-center justify-center"
               >
                 Get Started
-              </a>
+              </Link>
             </div>
 
             {/* Elite */}
@@ -651,13 +660,13 @@ export default function LandingPage() {
                   <span>Dedicated account manager</span>
                 </li>
               </ul>
-              <a 
-                href="/apply" 
+              <Link 
+                to="/apply" 
                 onClick={() => trackCTAClick('pricing_elite')}
                 className="block w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-black font-bold py-3 sm:py-4 rounded-lg text-center transition text-sm sm:text-base min-h-[44px] flex items-center justify-center"
               >
                 Get Started
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -669,13 +678,13 @@ export default function LandingPage() {
           <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black mb-4 sm:mb-6">READY TO GET THE EDGE?</h2>
           <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 text-blue-50">Join 2,800+ members betting smarter with insider analysis</p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <a 
-              href="/apply" 
+            <Link 
+              to="/apply" 
               onClick={() => trackCTAClick('final_cta')}
               className="bg-white hover:bg-gray-100 text-blue-600 font-bold px-8 sm:px-10 py-4 sm:py-5 rounded-lg text-base sm:text-lg min-h-[44px] flex items-center justify-center"
             >
               Request Access Now
-            </a>
+            </Link>
             <a 
               href="https://chat.whatsapp.com/FgmkVMnR3SH6aTFjO7QL2k" 
               target="_blank" 
