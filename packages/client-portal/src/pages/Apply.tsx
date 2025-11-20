@@ -1,9 +1,25 @@
 import { useState, FormEvent, ChangeEvent, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import type { CreateApplicationRequest, CreateApplicationResponse } from '@sportsbook/shared-types';
 import Footer from '../components/Footer';
 import { trackFormStart, trackFormSubmit } from '../utils/analytics';
+
+// Type definitions (inline since shared-types may not be available during build)
+interface CreateApplicationRequest {
+  fullName: string;
+  email: string;
+  phone: string;
+  bettingExperience: 'beginner' | 'intermediate' | 'advanced' | 'professional';
+  smsConsent: boolean;
+}
+
+interface CreateApplicationResponse {
+  success: boolean;
+  message: string;
+  applicationId?: string;
+  error?: string;
+  details?: string[];
+}
 
 interface FormData {
   fullName: string;
