@@ -204,36 +204,58 @@ export const Reports = () => {
       {currentReport && (
         <div className="space-y-6">
           {/* Report Header */}
-          <div className="bg-white rounded-lg shadow p-6">
-            <div className="flex items-center justify-between">
+          <div className="bg-white rounded-lg shadow p-6 border-b border-gray-200">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
-                <h3 className="text-xl font-bold text-gray-900">
-                  {currentReport.sport} Report
-                </h3>
-                <p className="text-sm text-gray-600 mt-1">
-                  Generated: {new Date(currentReport.generatedAt).toLocaleString()}
-                </p>
-                <p className="text-sm text-gray-600">
-                  Status:{' '}
+                <div className="flex items-center gap-3">
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    {currentReport.sport} Report
+                  </h3>
                   <span
-                    className={`font-medium ${currentReport.status === 'published'
-                      ? 'text-green-600'
-                      : 'text-gray-600'
+                    className={`px-3 py-1 rounded-full text-sm font-bold ${currentReport.status === 'published'
+                        ? 'bg-green-100 text-green-800'
+                        : 'bg-yellow-100 text-yellow-800'
                       }`}
                   >
                     {currentReport.status.toUpperCase()}
                   </span>
+                </div>
+                <p className="text-sm text-gray-500 mt-1">
+                  Generated: {new Date(currentReport.generatedAt).toLocaleString()}
                 </p>
               </div>
-              {currentReport.status !== 'published' && (
-                <button
-                  onClick={handlePublishReport}
-                  disabled={publishReportMutation.isPending}
-                  className="px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
-                >
-                  {publishReportMutation.isPending ? 'Publishing...' : 'Publish Report'}
-                </button>
-              )}
+
+              <div className="flex items-center gap-3">
+                {currentReport.status !== 'published' && (
+                  <>
+                    <div className="px-4 py-2 bg-yellow-50 border border-yellow-200 rounded text-yellow-800 text-sm font-medium flex items-center gap-2">
+                      <span>✏️ Editing Mode Active</span>
+                    </div>
+                    <button
+                      onClick={() => window.open(`/preview/report/${currentReport.id}`, '_blank')}
+                      className="px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition-colors font-medium"
+                    >
+                      👁️ Preview
+                    </button>
+                    <button
+                      onClick={() => {
+                        if (window.confirm('Are you sure you want to publish this report? It will immediately become visible to all clients.')) {
+                          handlePublishReport();
+                        }
+                      }}
+                      disabled={publishReportMutation.isPending}
+                      className="px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-bold shadow-sm"
+                    >
+                      {publishReportMutation.isPending ? 'Publishing...' : '🚀 Publish Live'}
+                    </button>
+                  </>
+                )}
+                {currentReport.status === 'published' && (
+                  <div className="px-4 py-2 bg-green-50 border border-green-200 rounded text-green-800 text-sm font-medium flex items-center gap-2">
+                    <span>✅ Live on Client Portal</span>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 

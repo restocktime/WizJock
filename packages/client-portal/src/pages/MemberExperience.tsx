@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import { OptimizedLogo } from '../components/OptimizedImage';
+import { BetCard } from '../components/BetCard';
 
 export default function MemberExperience() {
   const [activeTab, setActiveTab] = useState<'onboarding' | 'picks' | 'dashboard'>('onboarding');
@@ -35,8 +36,8 @@ export default function MemberExperience() {
               </Link>
             </nav>
 
-            <Link 
-              to="/apply" 
+            <Link
+              to="/apply"
               className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-sm min-h-[44px] flex items-center"
             >
               GET STARTED
@@ -62,31 +63,28 @@ export default function MemberExperience() {
             <div className="inline-flex bg-gray-800/50 border border-gray-700 rounded-lg p-1">
               <button
                 onClick={() => setActiveTab('onboarding')}
-                className={`px-6 py-3 rounded-md font-semibold transition-all ${
-                  activeTab === 'onboarding'
-                    ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
-                    : 'text-gray-400 hover:text-white'
-                }`}
+                className={`px-6 py-3 rounded-md font-semibold transition-all ${activeTab === 'onboarding'
+                  ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
+                  : 'text-gray-400 hover:text-white'
+                  }`}
               >
                 Onboarding
               </button>
               <button
                 onClick={() => setActiveTab('picks')}
-                className={`px-6 py-3 rounded-md font-semibold transition-all ${
-                  activeTab === 'picks'
-                    ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
-                    : 'text-gray-400 hover:text-white'
-                }`}
+                className={`px-6 py-3 rounded-md font-semibold transition-all ${activeTab === 'picks'
+                  ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
+                  : 'text-gray-400 hover:text-white'
+                  }`}
               >
                 Daily Picks
               </button>
               <button
                 onClick={() => setActiveTab('dashboard')}
-                className={`px-6 py-3 rounded-md font-semibold transition-all ${
-                  activeTab === 'dashboard'
-                    ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
-                    : 'text-gray-400 hover:text-white'
-                }`}
+                className={`px-6 py-3 rounded-md font-semibold transition-all ${activeTab === 'dashboard'
+                  ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white'
+                  : 'text-gray-400 hover:text-white'
+                  }`}
               >
                 Dashboard
               </button>
@@ -329,167 +327,51 @@ export default function MemberExperience() {
               {/* Example Picks */}
               <div className="max-w-5xl mx-auto space-y-6">
                 <h3 className="text-2xl font-black text-center mb-6">Today's Picks (Example)</h3>
-                
-                {/* Pick 1 - High Confidence */}
-                <div className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 border-2 border-green-500/50 rounded-xl p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">HIGH CONFIDENCE</span>
-                      <span className="text-gray-400 text-sm">Posted: 8:02 AM EST</span>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-sm text-gray-400">Confidence</div>
-                      <div className="text-2xl font-black text-green-400">9/10</div>
-                    </div>
-                  </div>
-                  
-                  <div className="grid md:grid-cols-2 gap-6 mb-4">
-                    <div>
-                      <div className="text-sm text-gray-400 mb-2">GAME</div>
-                      <div className="text-xl font-bold mb-1">🏀 Lakers vs Warriors</div>
-                      <div className="text-sm text-gray-400">Tonight, 10:00 PM EST</div>
-                    </div>
-                    <div>
-                      <div className="text-sm text-gray-400 mb-2">PICK</div>
-                      <div className="text-2xl font-black text-white mb-1">Warriors -3.5</div>
-                      <div className="text-sm text-gray-400">Odds: -110 (FanDuel)</div>
-                    </div>
-                  </div>
 
-                  <div className="grid md:grid-cols-3 gap-4 mb-4">
-                    <div className="bg-gray-900/50 rounded-lg p-3">
-                      <div className="text-xs text-gray-400 mb-1">RECOMMENDED UNITS</div>
-                      <div className="text-xl font-bold text-cyan-400">2 Units</div>
-                    </div>
-                    <div className="bg-gray-900/50 rounded-lg p-3">
-                      <div className="text-xs text-gray-400 mb-1">EXPECTED VALUE</div>
-                      <div className="text-xl font-bold text-green-400">+5.2%</div>
-                    </div>
-                    <div className="bg-gray-900/50 rounded-lg p-3">
-                      <div className="text-xs text-gray-400 mb-1">SHARP MONEY</div>
-                      <div className="text-xl font-bold text-blue-400">73% Warriors</div>
-                    </div>
-                  </div>
+                <BetCard pick={{
+                  id: '1',
+                  matchup: 'Lakers vs Warriors',
+                  betType: 'Spread',
+                  recommendation: 'Warriors -3.5',
+                  currentOdds: '-110',
+                  units: 2,
+                  confidenceScore: 90,
+                  reasoning: 'Warriors coming off 3 days rest while Lakers played last night (back-to-back). Curry is 12-3 ATS in this matchup historically. Line moved from -2.5 to -3.5 on sharp money.',
+                  hierarchy: 'high',
+                  gameTime: new Date().toISOString(),
+                  sport: 'NBA',
+                  playerProps: []
+                }} />
 
-                  <div className="bg-gray-900/50 rounded-lg p-4">
-                    <div className="text-sm font-bold text-green-400 mb-2">ANALYSIS</div>
-                    <div className="text-sm text-gray-300 space-y-2">
-                      <p>
-                        <strong>Key Factors:</strong> Warriors coming off 3 days rest while Lakers played last night (back-to-back). 
-                        Curry is 12-3 ATS in this matchup historically.
-                      </p>
-                      <p>
-                        <strong>Line Movement:</strong> Opened at -2.5, moved to -3.5 on sharp money. Public is 68% on Lakers but money is 73% on Warriors.
-                      </p>
-                      <p>
-                        <strong>Injury Report:</strong> Lakers questionable: Davis (ankle). Warriors full strength.
-                      </p>
-                      <p>
-                        <strong>Weather/Venue:</strong> Chase Center, Warriors 18-4 at home this season.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <BetCard pick={{
+                  id: '2',
+                  matchup: 'Chiefs vs Bills',
+                  betType: 'Total',
+                  recommendation: 'Over 52.5',
+                  currentOdds: '-108',
+                  units: 1,
+                  confidenceScore: 60,
+                  reasoning: 'Two high-powered offenses in a dome. Both teams averaging 28+ PPG. Defenses have been vulnerable. Historical matchups average 56 points.',
+                  hierarchy: 'medium',
+                  gameTime: new Date().toISOString(),
+                  sport: 'NFL',
+                  playerProps: []
+                }} />
 
-                {/* Pick 2 - Medium Confidence */}
-                <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold">MEDIUM CONFIDENCE</span>
-                      <span className="text-gray-400 text-sm">Posted: 8:05 AM EST</span>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-sm text-gray-400">Confidence</div>
-                      <div className="text-2xl font-black text-blue-400">6/10</div>
-                    </div>
-                  </div>
-                  
-                  <div className="grid md:grid-cols-2 gap-6 mb-4">
-                    <div>
-                      <div className="text-sm text-gray-400 mb-2">GAME</div>
-                      <div className="text-xl font-bold mb-1">🏈 Chiefs vs Bills</div>
-                      <div className="text-sm text-gray-400">Sunday, 4:25 PM EST</div>
-                    </div>
-                    <div>
-                      <div className="text-sm text-gray-400 mb-2">PICK</div>
-                      <div className="text-2xl font-black text-white mb-1">Over 52.5</div>
-                      <div className="text-sm text-gray-400">Odds: -108 (DraftKings)</div>
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-3 gap-4 mb-4">
-                    <div className="bg-gray-900/50 rounded-lg p-3">
-                      <div className="text-xs text-gray-400 mb-1">RECOMMENDED UNITS</div>
-                      <div className="text-xl font-bold text-cyan-400">1 Unit</div>
-                    </div>
-                    <div className="bg-gray-900/50 rounded-lg p-3">
-                      <div className="text-xs text-gray-400 mb-1">EXPECTED VALUE</div>
-                      <div className="text-xl font-bold text-green-400">+2.8%</div>
-                    </div>
-                    <div className="bg-gray-900/50 rounded-lg p-3">
-                      <div className="text-xs text-gray-400 mb-1">WEATHER</div>
-                      <div className="text-xl font-bold text-orange-400">Dome</div>
-                    </div>
-                  </div>
-
-                  <div className="bg-gray-900/50 rounded-lg p-4">
-                    <div className="text-sm font-bold text-blue-400 mb-2">ANALYSIS</div>
-                    <div className="text-sm text-gray-300">
-                      Two high-powered offenses in a dome. Both teams averaging 28+ PPG. Defenses have been vulnerable. 
-                      Historical matchups average 56 points. Line opened at 51, moved to 52.5 on over action.
-                    </div>
-                  </div>
-                </div>
-
-                {/* Pick 3 - Value Play */}
-                <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <span className="bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold">VALUE PLAY</span>
-                      <span className="text-gray-400 text-sm">Posted: 8:12 AM EST</span>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-sm text-gray-400">Confidence</div>
-                      <div className="text-2xl font-black text-purple-400">7/10</div>
-                    </div>
-                  </div>
-                  
-                  <div className="grid md:grid-cols-2 gap-6 mb-4">
-                    <div>
-                      <div className="text-sm text-gray-400 mb-2">GAME</div>
-                      <div className="text-xl font-bold mb-1">⚽ Man City vs Arsenal</div>
-                      <div className="text-sm text-gray-400">Saturday, 12:30 PM EST</div>
-                    </div>
-                    <div>
-                      <div className="text-sm text-gray-400 mb-2">PICK</div>
-                      <div className="text-2xl font-black text-white mb-1">BTTS (Yes)</div>
-                      <div className="text-sm text-gray-400">Odds: +105 (BetMGM)</div>
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-3 gap-4 mb-4">
-                    <div className="bg-gray-900/50 rounded-lg p-3">
-                      <div className="text-xs text-gray-400 mb-1">RECOMMENDED UNITS</div>
-                      <div className="text-xl font-bold text-cyan-400">1.5 Units</div>
-                    </div>
-                    <div className="bg-gray-900/50 rounded-lg p-3">
-                      <div className="text-xs text-gray-400 mb-1">EXPECTED VALUE</div>
-                      <div className="text-xl font-bold text-green-400">+4.1%</div>
-                    </div>
-                    <div className="bg-gray-900/50 rounded-lg p-3">
-                      <div className="text-xs text-gray-400 mb-1">HIT RATE</div>
-                      <div className="text-xl font-bold text-cyan-400">78%</div>
-                    </div>
-                  </div>
-
-                  <div className="bg-gray-900/50 rounded-lg p-4">
-                    <div className="text-sm font-bold text-purple-400 mb-2">ANALYSIS</div>
-                    <div className="text-sm text-gray-300">
-                      Both teams to score has hit in 8 of last 10 meetings. Both offenses firing on all cylinders. 
-                      Arsenal's defense has been leaky on the road. Great value at plus money.
-                    </div>
-                  </div>
-                </div>
+                <BetCard pick={{
+                  id: '3',
+                  matchup: 'Man City vs Arsenal',
+                  betType: 'Both Teams To Score',
+                  recommendation: 'Yes',
+                  currentOdds: '+105',
+                  units: 1.5,
+                  confidenceScore: 70,
+                  reasoning: 'Both teams to score has hit in 8 of last 10 meetings. Both offenses firing on all cylinders. Arsenal\'s defense has been leaky on the road.',
+                  hierarchy: 'value',
+                  gameTime: new Date().toISOString(),
+                  sport: 'SOCCER',
+                  playerProps: []
+                }} />
               </div>
 
               {/* Live Updates Section */}
@@ -509,7 +391,7 @@ export default function MemberExperience() {
                       <span className="text-gray-400 text-xs">2:15 PM</span>
                     </div>
                     <p className="text-sm text-gray-300">
-                      <strong>Lakers-Warriors:</strong> LeBron James officially OUT. Line moved from -3.5 to -5.5. 
+                      <strong>Lakers-Warriors:</strong> LeBron James officially OUT. Line moved from -3.5 to -5.5.
                       Our pick still valid, increased confidence to 9.5/10.
                     </p>
                   </div>
@@ -691,7 +573,7 @@ export default function MemberExperience() {
             <p className="text-lg mb-8 text-blue-50">
               Join 2,800+ members who receive picks like these every day
             </p>
-            <Link 
+            <Link
               to="/apply"
               className="inline-block bg-white hover:bg-gray-100 text-blue-600 font-bold px-8 py-4 rounded-lg text-lg transition-colors"
             >

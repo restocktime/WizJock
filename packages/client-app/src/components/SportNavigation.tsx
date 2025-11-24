@@ -19,17 +19,20 @@ export const SportNavigation = () => {
                             to={`/${sport.id}`}
                             className={({ isActive }) =>
                                 clsx(
-                                    'flex flex-col items-center justify-center p-4 rounded-xl border-2 transition-all min-h-[100px] relative',
+                                    'flex flex-col items-center justify-center p-4 rounded-xl border transition-all min-h-[100px] relative group',
                                     isActive
-                                        ? 'border-accent bg-accent/5 text-accent shadow-sm'
-                                        : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:bg-gray-50'
+                                        ? 'border-cyan-500 bg-cyan-500/10 text-white shadow-[0_0_20px_rgba(6,182,212,0.15)]'
+                                        : 'border-gray-800 bg-gray-900/50 text-gray-400 hover:border-gray-700 hover:bg-gray-800 hover:text-white'
                                 )
                             }
                         >
-                            <sport.icon className="w-8 h-8 mb-2" />
-                            <span className="text-lg font-bold">{sport.name}</span>
+                            <sport.icon className={clsx("w-8 h-8 mb-2 transition-colors", ({ isActive }: { isActive: boolean }) => isActive ? "text-cyan-400" : "text-gray-500 group-hover:text-gray-300")} />
+                            <span className="text-lg font-black tracking-wide">{sport.name}</span>
                             {sport.count > 0 && (
-                                <span className="absolute top-2 right-2 bg-primary text-white text-xs font-bold px-2 py-1 rounded-full">
+                                <span className={clsx(
+                                    "absolute top-2 right-2 text-[10px] font-bold px-2 py-0.5 rounded-full",
+                                    ({ isActive }: { isActive: boolean }) => isActive ? "bg-cyan-500 text-black" : "bg-gray-800 text-gray-400"
+                                )}>
                                     {sport.count}
                                 </span>
                             )}

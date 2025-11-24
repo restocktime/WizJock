@@ -17,6 +17,8 @@ const WhyUs = lazy(() => import('./pages/WhyUs'));
 const HowItWorks = lazy(() => import('./pages/HowItWorks'));
 const MemberExperience = lazy(() => import('./pages/MemberExperience'));
 const Contact = lazy(() => import('./pages/Contact'));
+const LocationIndex = lazy(() => import('./pages/LocationIndex'));
+const StatePage = lazy(() => import('./pages/StatePage'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Loading component
@@ -52,6 +54,8 @@ function App() {
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/member-experience" element={<MemberExperience />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/locations" element={<LocationIndex />} />
+            <Route path="/locations/:stateSlug" element={<StatePage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Star, ChevronDown, ChevronUp, ShieldCheck, TrendingUp } from 'lucide-react';
+import { Star, ChevronDown, ChevronUp, ShieldCheck, TrendingUp, Zap, Trophy } from 'lucide-react';
 import clsx from 'clsx';
 import type { Pick, PickHierarchy } from '@sportsbook/shared-types';
 
@@ -9,94 +9,112 @@ interface PickCardProps {
 
 const HierarchyBadge = ({ hierarchy }: { hierarchy: PickHierarchy }) => {
     const config = {
-        lock: { color: 'bg-gold text-primary', icon: ShieldCheck, stars: 5, label: 'LOCK' },
-        featured: { color: 'bg-silver text-primary', icon: Star, stars: 4, label: 'FEATURED' },
-        high: { color: 'bg-blue-100 text-blue-800', icon: TrendingUp, stars: 3, label: 'HIGH CONFIDENCE' },
-        medium: { color: 'bg-gray-100 text-gray-800', icon: null, stars: 2, label: 'MEDIUM' },
-        value: { color: 'bg-green-100 text-green-800', icon: null, stars: 1, label: 'VALUE PLAY' },
+        lock: { color: 'bg-yellow-500 text-black', icon: ShieldCheck, label: 'LOCK' },
+        featured: { color: 'bg-blue-500 text-white', icon: Star, label: 'FEATURED' },
+        high: { color: 'bg-green-500 text-black', icon: TrendingUp, label: 'HIGH CONFIDENCE' },
+        medium: { color: 'bg-gray-700 text-gray-300', icon: null, label: 'MEDIUM' },
+        value: { color: 'bg-purple-500 text-white', icon: Zap, label: 'VALUE PLAY' },
     };
 
-    const { color, icon: Icon, stars, label } = config[hierarchy] || config.medium;
+    const { color, icon: Icon, label } = config[hierarchy] || config.medium;
 
     return (
-        <div className="flex items-center justify-between mb-3">
-            <span className={clsx('px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1', color)}>
-                {Icon && <Icon className="w-4 h-4" />}
-                {label}
-            </span>
-            <div className="flex gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                    <Star
-                        key={i}
-                        className={clsx('w-4 h-4', i < stars ? 'fill-gold text-gold' : 'text-gray-200')}
-                    />
-                ))}
-            </div>
-        </div>
+        <span className={clsx('px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider flex items-center gap-1', color)}>
+            {Icon && <Icon className="w-3 h-3" />}
+            {label}
+        </span>
     );
 };
 
 export const PickCard = ({ pick }: PickCardProps) => {
     const [isExpanded, setIsExpanded] = useState(false);
+    const isLock = pick.hierarchy === 'lock';
+    const isFeatured = pick.hierarchy === 'featured';
 
     return (
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mb-4">
-            <div className="p-5">
-                <HierarchyBadge hierarchy={pick.hierarchy} />
+        <div className={`relative overflow-hidden rounded-xl border mb-4 transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:shadow-cyan-500/10 group ${isLock ? 'border-yellow-500/50 bg-yellow-500/5' :
+                isFeatured ? 'border-blue-500/50 bg-blue-500/5' :
+                    'border-gray-800 bg-gray-900'
+            }`}>
+            {/* Background Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-white/5 pointer-events-none" />
 
-                <div className="flex justify-between items-start mb-4">
+            {/* Header */}
+            <div className="p-4 border-b border-gray-800 flex justify-between items-center bg-black/20">
+                <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-xs font-bold text-gray-400">
+                        <Trophy className="w-4 h-4" />
+                    </div>
                     <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-1">{pick.matchup}</h3>
-                        <p className="text-sm text-gray-500">
+                        <div className="text-xs text-gray-400 font-medium">
                             {new Date(pick.gameTime).toLocaleString([], {
                                 weekday: 'short',
                                 hour: 'numeric',
                                 minute: '2-digit'
                             })}
-                        </p>
+                        </div>
+                        <div className="text-sm font-bold text-white">{pick.matchup}</div>
+                    </div>
+                </div>
+                <HierarchyBadge hierarchy={pick.hierarchy} />
+            </div>
+
+            <div className="p-4">
+                <div className="flex justify-between items-end mb-4">
+                    <div>
+                        <div className="text-xs text-gray-400 uppercase tracking-wider mb-1">Pick</div>
+                        <div className="text-2xl font-black text-white leading-none mb-1">
+                            {pick.recommendation}
+                        </div>
+                        <div className="text-sm text-cyan-400 font-bold">{pick.betType}</div>
                     </div>
                     <div className="text-right">
-                        <div className="text-2xl font-bold text-primary">{pick.recommendation}</div>
-                        <div className="text-lg font-medium text-gray-600">{pick.currentOdds}</div>
+                        <div className="text-xs text-gray-400 uppercase tracking-wider mb-1">Odds</div>
+                        <div className="text-xl font-bold text-green-400">{pick.currentOdds}</div>
                     </div>
                 </div>
 
-                <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                    <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">Unit Size</span>
-                        <span className="font-bold text-primary">{pick.units} Units</span>
+                <div className="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-gray-800">
+                    <div className="bg-gray-800/30 rounded p-2 text-center">
+                        <div className="text-[10px] text-gray-500 uppercase">Confidence</div>
+                        <div className="text-lg font-bold text-blue-400">{pick.confidenceScore}%</div>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2.5">
-                        <div
-                            className="bg-accent h-2.5 rounded-full"
-                            style={{ width: `${(pick.units / 5) * 100}%` }}
-                        ></div>
+                    <div className="bg-gray-800/30 rounded p-2 text-center">
+                        <div className="text-[10px] text-gray-500 uppercase">Units</div>
+                        <div className="text-lg font-bold text-white">{pick.units}u</div>
                     </div>
                 </div>
 
-                <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                    {pick.reasoning}
-                </p>
+                <div className="mt-4">
+                    <p className="text-sm text-gray-300 leading-relaxed">
+                        {pick.reasoning}
+                    </p>
+                </div>
 
                 {pick.playerProps && pick.playerProps.length > 0 && (
-                    <div className="border-t border-gray-100 pt-4">
+                    <div className="mt-4 pt-4 border-t border-gray-800">
                         <button
                             onClick={() => setIsExpanded(!isExpanded)}
-                            className="flex items-center justify-between w-full text-left text-gray-600 hover:text-primary transition-colors"
+                            className="flex items-center justify-between w-full text-left text-gray-400 hover:text-white transition-colors text-sm"
                         >
                             <span className="font-medium">Player Props ({pick.playerProps.length})</span>
-                            {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                            {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                         </button>
 
                         {isExpanded && (
-                            <div className="mt-3 space-y-3">
+                            <div className="mt-3 space-y-2">
                                 {pick.playerProps.map((prop) => (
-                                    <div key={prop.id} className="bg-blue-50 p-3 rounded-lg flex justify-between items-center">
+                                    <div key={prop.id} className="bg-gray-800/50 rounded-lg p-2 flex justify-between items-center">
                                         <div>
-                                            <div className="font-bold text-gray-900">{prop.playerName}</div>
-                                            <div className="text-sm text-gray-600">{prop.statType} {prop.line} ({prop.overUnder})</div>
+                                            <div className="text-sm font-bold text-white">{prop.playerName}</div>
+                                            <div className="text-xs text-gray-400">{prop.statType}</div>
                                         </div>
-                                        <div className="font-bold text-primary">{prop.odds}</div>
+                                        <div className="text-right">
+                                            <div className="text-lg font-black text-white">{prop.line}</div>
+                                            <div className={`text-[10px] font-bold uppercase ${prop.overUnder === 'over' ? 'text-green-400' : 'text-red-400'}`}>
+                                                {prop.overUnder}
+                                            </div>
+                                        </div>
                                     </div>
                                 ))}
                             </div>

@@ -11,6 +11,7 @@ import { Injuries } from './pages/Injuries';
 import { Intelligence } from './pages/Intelligence';
 import { LineMovements } from './pages/LineMovements';
 import Applications from './pages/Applications';
+import { ReportPreview } from './pages/ReportPreview';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -96,6 +97,14 @@ function App() {
                   <Layout>
                     <Applications />
                   </Layout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/preview/report/:id"
+              element={
+                <ProtectedRoute>
+                  <ReportPreview />
                 </ProtectedRoute>
               }
             />

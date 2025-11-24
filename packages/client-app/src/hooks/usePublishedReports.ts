@@ -18,7 +18,7 @@ export const usePublishedReports = (sport?: string) => {
                 params.sport = sport.toUpperCase();
             }
             const response = await axios.get<GetPicksResponse>('/api/picks', { params });
-            return response.data.picks;
+            return response.data;
         },
         staleTime: 60 * 1000, // 1 minute
     });

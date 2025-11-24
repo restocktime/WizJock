@@ -37,7 +37,7 @@ export const UpdateIndicator = ({ lastUpdated }: UpdateIndicatorProps) => {
 
     return (
         <div className="flex items-center justify-end mb-4 text-sm">
-            <div className={clsx('flex items-center gap-1.5', isStale ? 'text-amber-600' : 'text-gray-500')}>
+            <div className={clsx('flex items-center gap-1.5', isStale ? 'text-yellow-500' : 'text-gray-400')}>
                 {isStale ? <AlertTriangle className="w-4 h-4" /> : <Clock className="w-4 h-4" />}
                 <span className="font-medium">Last Updated: {timeAgo}</span>
             </div>
