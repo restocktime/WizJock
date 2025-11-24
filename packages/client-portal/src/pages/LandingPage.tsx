@@ -232,18 +232,8 @@ export default function LandingPage() {
               </a>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              {[1, 2, 3, 4, 5, 6, 1, 2].map((num, idx) => (
-                <div key={idx} className="bg-gray-800 border border-gray-700 rounded-lg p-3 hover:border-cyan-500/50 transition">
-                  <OptimizedImage
-                    src={`/optimized/slips/slip${num}`}
-                    alt={`Winning betting slip ${idx + 1} from WizJock member`}
-                    lazy={true}
-                    className="w-full aspect-[9/16] object-contain bg-gray-900 rounded"
-                  />
-                </div>
-              ))}
-            </div>
+            {/* Card Shuffle Animation */}
+            <CardShuffle />
           </div>
         </section>
 
