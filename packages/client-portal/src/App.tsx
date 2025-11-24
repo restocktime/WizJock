@@ -20,6 +20,9 @@ const Contact = lazy(() => import('./pages/Contact'));
 const LocationIndex = lazy(() => import('./pages/LocationIndex'));
 const StatePage = lazy(() => import('./pages/StatePage'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const AdminLogin = lazy(() => import('./pages/AdminLogin'));
+const MemberLogin = lazy(() => import('./pages/MemberLogin'));
+const Wishlist = lazy(() => import('./pages/Wishlist'));
 
 // Loading component
 import LoadingSpinner from './components/LoadingSpinner';
@@ -56,6 +59,9 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/locations" element={<LocationIndex />} />
             <Route path="/locations/:stateSlug" element={<StatePage />} />
+            <Route path="/admin-login" element={<AdminLogin />} />
+            <Route path="/member-login" element={<MemberLogin />} />
+            <Route path="/wishlist" element={<Wishlist />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

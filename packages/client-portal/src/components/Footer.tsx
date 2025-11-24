@@ -43,6 +43,33 @@ export default function Footer() {
             </ul>
           </nav>
 
+          {/* Member & Admin Access */}
+          <div role="navigation" aria-label="Member and Admin Access">
+            <h4 className="text-lg font-semibold mb-4">Access</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/member-experience" className="text-gray-400 hover:text-white transition-colors">
+                  Member Experience
+                </Link>
+              </li>
+              <li>
+                <Link to="/member-login" className="text-gray-400 hover:text-white transition-colors">
+                  Member Login
+                </Link>
+              </li>
+              <li>
+                <Link to="/admin-login" className="text-gray-400 hover:text-white transition-colors">
+                  Admin Portal
+                </Link>
+              </li>
+              <li>
+                <Link to="/wishlist" className="text-gray-400 hover:text-white transition-colors">
+                  Feature Wishlist
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Legal */}
           <nav aria-label="Legal information">
             <h4 className="text-lg font-semibold mb-4">Legal</h4>
