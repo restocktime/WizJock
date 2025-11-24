@@ -8,9 +8,9 @@ interface StateHeroProps {
 
 export default function StateHero({ stateData }: StateHeroProps) {
   const memberCount = stateData.memberCount || 0;
-  const legalStatusColor = stateData.legalStatus === 'legal' ? 'text-green-400' : 
-                           stateData.legalStatus === 'pending' ? 'text-yellow-400' : 
-                           'text-gray-400';
+  const legalStatusColor = stateData.legalStatus === 'legal' ? 'text-green-400' :
+    stateData.legalStatus === 'pending' ? 'text-yellow-400' :
+      'text-gray-400';
 
   return (
     <section className="relative px-4 pt-12 sm:pt-16 pb-20 overflow-hidden" aria-label="Hero section">
@@ -19,26 +19,26 @@ export default function StateHero({ stateData }: StateHeroProps) {
           <div className="inline-block bg-orange-500 text-white px-4 py-1 rounded-full text-xs font-bold mb-4">
             SERVING {stateData.name.toUpperCase()}
           </div>
-          
+
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 leading-tight">
             {stateData.heroTagline || `Professional Sports Betting Analysis in ${stateData.name}`}
           </h1>
-          
+
           <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8">
             {stateData.localInsights || `Join ${memberCount > 0 ? `${memberCount} ${stateData.name}` : 'local'} members who are winning with data-driven sports betting picks and professional analysis.`}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-            <Link 
-              to="/apply" 
+            <Link
+              to="/apply"
               onClick={() => trackCTAClick(`state_hero_${stateData.slug}`)}
               className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold px-6 sm:px-8 py-4 rounded-lg text-base sm:text-lg min-h-[44px] flex items-center justify-center"
             >
               Request Access
             </Link>
-            <a 
-              href="https://chat.whatsapp.com/FgmkVMnR3SH6aTFjO7QL2k" 
-              target="_blank" 
+            <a
+              href="https://chat.whatsapp.com/FgmkVMnR3SH6aTFjO7QL2k"
+              target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppClick(`state_hero_${stateData.slug}`)}
               className="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white font-bold px-6 sm:px-8 py-4 rounded-lg text-base sm:text-lg min-h-[44px] flex flex-col items-center justify-center group relative"
@@ -66,7 +66,7 @@ export default function StateHero({ stateData }: StateHeroProps) {
               </div>
               <div>
                 <div className="text-xl sm:text-2xl lg:text-3xl font-black text-blue-400">
-                  {stateData.proTeams.nfl?.length || 0 + stateData.proTeams.nba?.length || 0 + stateData.proTeams.mlb?.length || 0 + stateData.proTeams.nhl?.length || 0}
+                  {(stateData.proTeams.nfl?.length || 0) + (stateData.proTeams.nba?.length || 0) + (stateData.proTeams.mlb?.length || 0) + (stateData.proTeams.nhl?.length || 0)}
                 </div>
                 <div className="text-[10px] sm:text-xs text-gray-400 uppercase leading-tight">Pro Teams</div>
               </div>
