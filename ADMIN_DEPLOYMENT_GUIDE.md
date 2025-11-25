@@ -12,11 +12,9 @@ The admin dashboard needs to be deployed separately from the client portal to `a
 3. Import your GitHub repository: `restocktime/WizJock`
 4. Configure the project:
    - **Project Name:** `wizjock-admin`
-   - **Framework Preset:** Vite
-   - **Root Directory:** `packages/admin-dashboard`
-   - **Build Command:** `npm install && npm run build`
-   - **Output Directory:** `dist`
-   - **Install Command:** `npm install`
+   - **Framework Preset:** Other
+   - **Root Directory:** Leave as `.` (root) - DO NOT change this!
+   - The `vercel.json` in `packages/admin-dashboard/` will handle the build
 
 ### 2. Configure Environment Variables
 

@@ -1,4 +1,5 @@
 {
+    "name": "wizjock-admin",
     "buildCommand": "npm install && npm run build --workspace=packages/shared-types && npm run build --workspace=packages/admin-dashboard",
     "outputDirectory": "packages/admin-dashboard/dist",
     "installCommand": "npm install",
