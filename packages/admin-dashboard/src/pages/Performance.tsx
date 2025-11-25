@@ -507,7 +507,7 @@ export const Performance = () => {
           </div>
 
           {/* Accuracy Trends Chart */}
-          {data.trends.length > 0 && (
+          {data.trends?.length > 0 && (
             <div className="bg-white rounded-lg shadow p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 Accuracy Trends Over Time

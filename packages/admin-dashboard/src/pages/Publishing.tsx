@@ -154,15 +154,15 @@ export const Publishing = () => {
         <div className="grid grid-cols-3 gap-4 mb-4 p-3 bg-gray-50 rounded">
           <div>
             <p className="text-xs text-gray-600">Picks</p>
-            <p className="text-lg font-bold text-gray-900">{report.picks.length}</p>
+            <p className="text-lg font-bold text-gray-900">{report.pick_count || report.picks?.length || 0}</p>
           </div>
           <div>
             <p className="text-xs text-gray-600">Injuries</p>
-            <p className="text-lg font-bold text-gray-900">{report.injuries.length}</p>
+            <p className="text-lg font-bold text-gray-900">{report.injury_count || report.injuries?.length || 0}</p>
           </div>
           <div>
             <p className="text-xs text-gray-600">Intelligence</p>
-            <p className="text-lg font-bold text-gray-900">{report.intelligenceUpdates.length}</p>
+            <p className="text-lg font-bold text-gray-900">{report.intelligence_count || report.intelligenceUpdates?.length || 0}</p>
           </div>
         </div>
 

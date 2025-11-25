@@ -13,6 +13,9 @@ export interface Report {
   injuries: InjuryUpdate[];
   intelligenceUpdates: IntelligenceUpdate[];
   lineMovements: LineMovement[];
+  pick_count?: number;
+  injury_count?: number;
+  intelligence_count?: number;
   systemPerformance?: SystemPerformance;
 }
 
