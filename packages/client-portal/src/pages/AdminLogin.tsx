@@ -4,7 +4,7 @@ import { OptimizedLogo } from '../components/OptimizedImage';
 export default function AdminLogin() {
     useEffect(() => {
         // Redirect to admin dashboard (adjust URL based on your deployment)
-        const adminUrl = import.meta.env.VITE_ADMIN_URL || 'http://localhost:5173';
+        const adminUrl = import.meta.env.VITE_ADMIN_URL || 'https://admin.wizjock.com';
         window.location.href = adminUrl;
     }, []);
 
@@ -24,7 +24,7 @@ export default function AdminLogin() {
                 <p className="text-sm text-gray-500 mt-6">
                     If you're not redirected automatically,{' '}
                     <a
-                        href={import.meta.env.VITE_ADMIN_URL || 'http://localhost:5173'}
+                        href={import.meta.env.VITE_ADMIN_URL || 'https://admin.wizjock.com'}
                         className="text-cyan-400 hover:text-cyan-300 underline"
                     >
                         click here
