@@ -23,9 +23,29 @@ const PORT = process.env.PORT || 3000;
 app.use(helmet());
 
 // CORS configuration
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://wizjock.com',
+  'https://www.wizjock.com',
+  'https://admin.wizjock.com',
+  'https://client.wizjock.com', // Critical for member dashboard
+  ...(process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',').map(o => o.trim()) : [])
+];
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN?.split(',').map(origin => origin.trim()) || '*',
-  credentials: true,
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      console.warn(`Blocked CORS for origin: ${origin}`);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
 }));
 
 // Body parsing middleware
