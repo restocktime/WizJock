@@ -165,9 +165,10 @@ export default function LandingPage() {
                   <Link
                     to="/apply"
                     onClick={() => trackCTAClick('hero')}
-                    className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold px-6 sm:px-8 py-4 rounded-lg text-base sm:text-lg min-h-[44px] flex items-center justify-center"
+                    className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold px-6 sm:px-8 py-4 rounded-lg text-base sm:text-lg min-h-[44px] flex items-center justify-center hover-lift relative overflow-hidden group"
                   >
-                    Request Access
+                    <span className="relative z-10">Request Access</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
                   </Link>
                   <a
                     href="https://chat.whatsapp.com/FgmkVMnR3SH6aTFjO7QL2k"
@@ -183,17 +184,17 @@ export default function LandingPage() {
                 </div>
 
                 {/* Live Stats Bar */}
-                <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 sm:p-6">
+                <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 sm:p-6 hover-glow animate-scale-in">
                   <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
-                    <div>
-                      <div className="text-xl sm:text-2xl lg:text-3xl font-black text-green-400">+18.7%</div>
+                    <div className="animate-slide-up-fade">
+                      <div className="text-xl sm:text-2xl lg:text-3xl font-black text-green-400 animate-glow-pulse">+18.7%</div>
                       <div className="text-[10px] sm:text-xs text-gray-400 uppercase leading-tight">ROI Last 90 Days</div>
                     </div>
-                    <div>
+                    <div className="animate-slide-up-fade delay-100">
                       <div className="text-xl sm:text-2xl lg:text-3xl font-black text-blue-400">+4.2%</div>
                       <div className="text-[10px] sm:text-xs text-gray-400 uppercase leading-tight">Avg EV Per Bet</div>
                     </div>
-                    <div>
+                    <div className="animate-slide-up-fade delay-200">
                       <div className="text-xl sm:text-2xl lg:text-3xl font-black text-cyan-400">2,847</div>
                       <div className="text-[10px] sm:text-xs text-gray-400 uppercase leading-tight">Active Members</div>
                     </div>
@@ -311,8 +312,8 @@ export default function LandingPage() {
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
-                <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 sm:p-8">
-                  <div className="text-cyan-400 text-3xl sm:text-4xl mb-3 sm:mb-4">🧠</div>
+                <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 sm:p-8 hover-lift hover-glow">
+                  <div className="text-cyan-400 text-3xl sm:text-4xl mb-3 sm:mb-4 animate-bounce-subtle">🧠</div>
                   <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Advanced Analytics</h3>
                   <p className="text-sm sm:text-base text-gray-400 mb-3 sm:mb-4">
                     Our system analyzes thousands of data points daily—player stats, injury reports, weather, betting trends, line movements, and historical matchups.
@@ -322,8 +323,8 @@ export default function LandingPage() {
                   </p>
                 </div>
 
-                <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 sm:p-8">
-                  <div className="text-green-400 text-3xl sm:text-4xl mb-3 sm:mb-4">⚡</div>
+                <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 sm:p-8 hover-lift hover-glow">
+                  <div className="text-green-400 text-3xl sm:text-4xl mb-3 sm:mb-4 animate-bounce-subtle">⚡</div>
                   <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Real-Time Intelligence</h3>
                   <p className="text-sm sm:text-base text-gray-400 mb-3 sm:mb-4">
                     Lines move fast. Injuries happen. Weather changes. Our system monitors everything 24/7 and alerts you instantly when conditions shift.
@@ -333,8 +334,8 @@ export default function LandingPage() {
                   </p>
                 </div>
 
-                <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 sm:p-8">
-                  <div className="text-blue-400 text-3xl sm:text-4xl mb-3 sm:mb-4">📊</div>
+                <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 sm:p-8 hover-lift hover-glow">
+                  <div className="text-blue-400 text-3xl sm:text-4xl mb-3 sm:mb-4 animate-bounce-subtle">📊</div>
                   <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Smart Bankroll Management</h3>
                   <p className="text-sm sm:text-base text-gray-400 mb-3 sm:mb-4">
                     Every pick comes with a confidence rating and recommended unit size. No guessing. No chasing losses.
@@ -344,8 +345,8 @@ export default function LandingPage() {
                   </p>
                 </div>
 
-                <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 sm:p-8">
-                  <div className="text-orange-400 text-3xl sm:text-4xl mb-3 sm:mb-4">✅</div>
+                <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 sm:p-8 hover-lift hover-glow">
+                  <div className="text-orange-400 text-3xl sm:text-4xl mb-3 sm:mb-4 animate-bounce-subtle">✅</div>
                   <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">100% Transparent Results</h3>
                   <p className="text-sm sm:text-base text-gray-400 mb-3 sm:mb-4">
                     Every pick is tracked and timestamped. No cherry-picking wins. No hiding losses.
@@ -354,7 +355,7 @@ export default function LandingPage() {
                     All results are verified and documented. See the proof in our winning slips above.
                   </p>
                   <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-700">
-                    <p className="text-xs sm:text-sm text-cyan-400 font-semibold">
+                    <p className="text-xs sm:text-sm text-cyan-400 font-semibold animate-pulse">
                       📊 Full public dashboard launching soon
                     </p>
                   </div>
@@ -486,7 +487,7 @@ export default function LandingPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {/* Starter */}
-              <div className="bg-gradient-to-b from-gray-800 to-gray-900 border border-gray-700 rounded-xl p-6 sm:p-8 hover:border-blue-500/50 transition">
+              <div className="bg-gradient-to-b from-gray-800 to-gray-900 border border-gray-700 rounded-xl p-6 sm:p-8 hover:border-blue-500/50 transition hover-lift animate-scale-in">
                 <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 sm:mb-3">STARTER</div>
                 <div className="mb-4 sm:mb-6">
                   <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">$299</span>
@@ -521,15 +522,16 @@ export default function LandingPage() {
                 <Link
                   to="/apply"
                   onClick={() => trackCTAClick('pricing_starter')}
-                  className="block w-full bg-white hover:bg-gray-100 text-black font-bold py-3 sm:py-4 rounded-lg text-center transition text-sm sm:text-base min-h-[44px] flex items-center justify-center"
+                  className="block w-full bg-white hover:bg-gray-100 text-black font-bold py-3 sm:py-4 rounded-lg text-center transition text-sm sm:text-base min-h-[44px] flex items-center justify-center relative overflow-hidden group"
                 >
-                  Get Started
+                  <span className="relative z-10">Get Started</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-200 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
                 </Link>
               </div>
 
               {/* Pro - Featured */}
-              <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-600 rounded-xl p-6 sm:p-8 relative transform lg:scale-105 shadow-2xl shadow-blue-500/50 sm:col-span-2 lg:col-span-1">
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-4 sm:px-6 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider">
+              <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-600 rounded-xl p-6 sm:p-8 relative transform lg:scale-105 shadow-2xl shadow-blue-500/50 sm:col-span-2 lg:col-span-1 hover-lift animate-scale-in animate-glow-pulse">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-4 sm:px-6 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider animate-bounce-subtle">
                   Most Popular
                 </div>
                 <div className="text-xs font-bold text-blue-200 uppercase tracking-wider mb-2 sm:mb-3">PRO</div>
@@ -572,9 +574,10 @@ export default function LandingPage() {
                 <Link
                   to="/apply"
                   onClick={() => trackCTAClick('pricing_pro')}
-                  className="block w-full bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 sm:py-4 rounded-lg text-center transition text-sm sm:text-base min-h-[44px] flex items-center justify-center"
+                  className="block w-full bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 sm:py-4 rounded-lg text-center transition text-sm sm:text-base min-h-[44px] flex items-center justify-center relative overflow-hidden group"
                 >
-                  Get Started
+                  <span className="relative z-10">Get Started</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-200 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
                 </Link>
               </div>
 

@@ -38,8 +38,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const login = async (email: string, password: string) => {
     try {
+      // Use axios defaults which is already configured with the base URL
       const response = await axios.post('/api/auth/login', { email, password });
-      const { token } = response.data;
+      const { token, user: userData } = response.data;
+
+      if (!token) {
+        throw new Error('No token received from server');
+      }
 
       localStorage.setItem('authToken', token);
       localStorage.setItem('userEmail', email);
@@ -47,8 +52,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
       setUser({ email });
       setIsAuthenticated(true);
-    } catch (error) {
-      throw new Error('Invalid credentials');
+    } catch (error: any) {
+      console.error('Login error:', error.response?.data || error.message);
+      throw new Error(error.response?.data?.message || 'Invalid credentials');
     }
   };
 
