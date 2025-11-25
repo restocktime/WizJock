@@ -25,7 +25,7 @@ export const SportPicksContainer = () => {
 
     return (
         <div className="space-y-6">
-            <UpdateIndicator lastUpdated={lastUpdated} />
+            <UpdateIndicator lastUpdated={lastUpdated || new Date()} />
             <PicksDisplay picks={picks} />
         </div>
     );

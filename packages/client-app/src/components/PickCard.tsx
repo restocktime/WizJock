@@ -8,7 +8,7 @@ interface PickCardProps {
 }
 
 const HierarchyBadge = ({ hierarchy }: { hierarchy: PickHierarchy }) => {
-    const config = {
+    const config: Record<PickHierarchy, { color: string; icon: any; label: string }> = {
         lock: { color: 'bg-yellow-500 text-black', icon: ShieldCheck, label: 'LOCK' },
         featured: { color: 'bg-blue-500 text-white', icon: Star, label: 'FEATURED' },
         high: { color: 'bg-green-500 text-black', icon: TrendingUp, label: 'HIGH CONFIDENCE' },
@@ -33,8 +33,8 @@ export const PickCard = ({ pick }: PickCardProps) => {
 
     return (
         <div className={`relative overflow-hidden rounded-xl border mb-4 transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:shadow-cyan-500/10 group ${isLock ? 'border-yellow-500/50 bg-yellow-500/5' :
-                isFeatured ? 'border-blue-500/50 bg-blue-500/5' :
-                    'border-gray-800 bg-gray-900'
+            isFeatured ? 'border-blue-500/50 bg-blue-500/5' :
+                'border-gray-800 bg-gray-900'
             }`}>
             {/* Background Gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-white/5 pointer-events-none" />
