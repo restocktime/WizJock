@@ -1,0 +1,6 @@
+{
+    "buildCommand": "npm install --prefix packages/client-portal && npm run build --prefix packages/client-portal",
+    "outputDirectory": "packages/client-portal/dist",
+    "installCommand": "echo 'Installing...'",
+    "framework": null
+}
