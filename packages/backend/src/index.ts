@@ -24,7 +24,7 @@ app.use(helmet());
 
 // CORS configuration
 app.use(cors({
-  origin: process.env.CORS_ORIGIN?.split(',') || '*',
+  origin: process.env.CORS_ORIGIN?.split(',').map(origin => origin.trim()) || '*',
   credentials: true,
 }));
 
