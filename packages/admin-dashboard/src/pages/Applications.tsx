@@ -29,7 +29,9 @@ interface ApplicationMetrics {
 }
 
 const productionBackendUrl = 'https://wizjock-production.up.railway.app';
-const API_URL = import.meta.env.VITE_API_URL || productionBackendUrl;
+const envApiUrl = import.meta.env.VITE_API_URL;
+const rawApiUrl = envApiUrl || productionBackendUrl;
+const API_URL = rawApiUrl.startsWith('http') ? rawApiUrl : `https://${rawApiUrl}`;
 
 const Applications: React.FC = () => {
   const [applications, setApplications] = useState<Application[]>([]);
