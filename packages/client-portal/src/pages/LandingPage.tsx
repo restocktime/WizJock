@@ -146,67 +146,59 @@ export default function LandingPage() {
 
           <div className="max-w-7xl mx-auto relative z-10">
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-block bg-orange-500 text-white px-4 py-1 rounded-full text-xs font-bold mb-4">
-                  INVITE ONLY
-                </div>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black mb-4 sm:mb-6 leading-tight">
-                  WIN MORE.<br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                    LOSE LESS.
-                  </span>
-                </h1>
-                <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8">
-                  Professional sports betting analysis and insider intelligence.
-                  Get the edge sharp bettors use to beat the books.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-                  <Link
-                    to="/apply"
-                    onClick={() => trackCTAClick('hero')}
-                    className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold px-6 sm:px-8 py-4 rounded-lg text-base sm:text-lg min-h-[44px] flex items-center justify-center hover-lift relative overflow-hidden group"
-                  >
-                    <span className="relative z-10">Request Access</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
-                  </Link>
-                  <a
-                    href="https://chat.whatsapp.com/FgmkVMnR3SH6aTFjO7QL2k"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => trackWhatsAppClick('hero')}
-                    className="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white font-bold px-6 sm:px-8 py-4 rounded-lg text-base sm:text-lg min-h-[44px] flex flex-col items-center justify-center group relative"
-                    title="Join our community to see live picks and results. Free to join, subscription required for full access."
-                  >
-                    <span>Join WhatsApp</span>
-                    <span className="text-xs font-normal mt-0.5 opacity-80 group-hover:opacity-100">See live picks & results</span>
-                  </a>
-                </div>
-
-                {/* Live Stats Bar */}
-                <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 sm:p-6 hover-glow animate-scale-in">
-                  <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
-                    <div className="animate-slide-up-fade">
-                      <div className="text-xl sm:text-2xl lg:text-3xl font-black text-green-400 animate-glow-pulse">+18.7%</div>
-                      <div className="text-[10px] sm:text-xs text-gray-400 uppercase leading-tight">ROI Last 90 Days</div>
-                    </div>
-                    <div className="animate-slide-up-fade delay-100">
-                      <div className="text-xl sm:text-2xl lg:text-3xl font-black text-blue-400">+4.2%</div>
-                      <div className="text-[10px] sm:text-xs text-gray-400 uppercase leading-tight">Avg EV Per Bet</div>
-                    </div>
-                    <div className="animate-slide-up-fade delay-200">
-                      <div className="text-xl sm:text-2xl lg:text-3xl font-black text-cyan-400">2,847</div>
-                      <div className="text-[10px] sm:text-xs text-gray-400 uppercase leading-tight">Active Members</div>
-                    </div>
-                  </div>
-                  <PerformanceDisclaimer variant="block" className="text-center" />
-                </div>
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="inline-block bg-orange-500 text-white px-4 py-1 rounded-full text-xs font-bold mb-4">
+                INVITE ONLY
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black mb-4 sm:mb-6 leading-tight">
+                WIN MORE.<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+                  LOSE LESS.
+                </span>
+              </h1>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto">
+                Professional sports betting analysis and insider intelligence.
+                Get the edge sharp bettors use to beat the books.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 justify-center">
+                <Link
+                  to="/apply"
+                  onClick={() => trackCTAClick('hero')}
+                  className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold px-6 sm:px-8 py-4 rounded-lg text-base sm:text-lg min-h-[44px] flex items-center justify-center hover-lift relative overflow-hidden group"
+                >
+                  <span className="relative z-10">Request Access</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+                </Link>
+                <a
+                  href="https://chat.whatsapp.com/FgmkVMnR3SH6aTFjO7QL2k"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick('hero')}
+                  className="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white font-bold px-6 sm:px-8 py-4 rounded-lg text-base sm:text-lg min-h-[44px] flex flex-col items-center justify-center group relative"
+                  title="Join our community to see live picks and results. Free to join, subscription required for full access."
+                >
+                  <span>Join WhatsApp</span>
+                  <span className="text-xs font-normal mt-0.5 opacity-80 group-hover:opacity-100">See live picks & results</span>
+                </a>
               </div>
 
-              {/* Card Shuffle Animation */}
-              <div className="relative flex justify-center items-center min-h-[400px]">
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 blur-3xl"></div>
-                <CardShuffle className="transform scale-110 sm:scale-125" />
+              {/* Live Stats Bar */}
+              <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 sm:p-6 hover-glow animate-scale-in max-w-3xl mx-auto">
+                <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
+                  <div className="animate-slide-up-fade">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-black text-green-400 animate-glow-pulse">+18.7%</div>
+                    <div className="text-[10px] sm:text-xs text-gray-400 uppercase leading-tight">ROI Last 90 Days</div>
+                  </div>
+                  <div className="animate-slide-up-fade delay-100">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-black text-blue-400">+4.2%</div>
+                    <div className="text-[10px] sm:text-xs text-gray-400 uppercase leading-tight">Avg EV Per Bet</div>
+                  </div>
+                  <div className="animate-slide-up-fade delay-200">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-black text-cyan-400">2,847</div>
+                    <div className="text-[10px] sm:text-xs text-gray-400 uppercase leading-tight">Active Members</div>
+                  </div>
+                </div>
+                <PerformanceDisclaimer variant="block" className="text-center" />
               </div>
             </div>
           </div>

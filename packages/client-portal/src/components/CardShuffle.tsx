@@ -56,12 +56,9 @@ export const CardShuffle = ({ className = '' }: CardShuffleProps) => {
                             <img
                                 src={slip}
                                 alt={`Winning betting slip ${index + 1}`}
-                                className="w-full h-full object-contain bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl"
+                                className="w-full h-full object-contain rounded-2xl"
                                 loading={index < 2 ? 'eager' : 'lazy'}
                             />
-
-                            {/* Overlay gradient for better visibility */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/20 pointer-events-none rounded-2xl" />
 
                             {/* Shine effect on active card */}
                             {isActive && (
@@ -79,8 +76,8 @@ export const CardShuffle = ({ className = '' }: CardShuffleProps) => {
                         key={index}
                         onClick={() => setActiveIndex(index)}
                         className={`w-2 h-2 rounded-full transition-all duration-300 ${index === activeIndex
-                                ? 'bg-cyan-400 w-8'
-                                : 'bg-gray-600 hover:bg-gray-500'
+                            ? 'bg-cyan-400 w-8'
+                            : 'bg-gray-600 hover:bg-gray-500'
                             }`}
                         aria-label={`View slip ${index + 1}`}
                     />
