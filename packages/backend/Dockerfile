@@ -10,7 +10,8 @@ COPY packages/backend/package.json ./packages/backend/
 COPY packages/shared-types/package.json ./packages/shared-types/
 
 # Install dependencies
-RUN npm install
+# Install dependencies (include dev dependencies for build)
+RUN npm install --include=dev
 
 # Copy source code
 COPY packages/backend ./packages/backend
