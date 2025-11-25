@@ -114,11 +114,13 @@ const startServer = async () => {
       logger.warn('Email service not initialized - RESEND_API_KEY not configured');
     }
 
-    // Start server
-    app.listen(PORT, () => {
-      console.log(`Backend API running on port ${PORT}`);
-      console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
-    });
+    // Start server if not in Vercel/Serverless environment
+    if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+      app.listen(PORT, () => {
+        console.log(`Backend API running on port ${PORT}`);
+        console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+      });
+    }
   } catch (error) {
     console.error('Failed to start server:', error);
     process.exit(1);
@@ -126,3 +128,5 @@ const startServer = async () => {
 };
 
 startServer();
+
+export default app;
