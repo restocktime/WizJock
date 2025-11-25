@@ -17,8 +17,6 @@ export default function Header() {
         { path: '/why-us', label: 'Why Us' },
         { path: '/how-it-works', label: 'How It Works' },
         { path: '/member-experience', label: 'Member Experience' },
-        { path: '/injuries', label: 'Injuries' },
-        { path: '/schedule', label: 'Schedule' },
         { path: '/contact', label: 'Contact' },
     ];
 
