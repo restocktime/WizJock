@@ -82,7 +82,7 @@ export const Intelligence = () => {
     queryKey: ['reports', 'draft'],
     queryFn: async () => {
       const response = await axios.get('/api/admin/reports', {
-        params: { status: 'draft', limit: 50 },
+        params: { limit: 50 },
       });
       return response.data;
     },
@@ -423,11 +423,10 @@ export const Intelligence = () => {
                 <button
                   key={tag}
                   onClick={() => toggleTag(tag)}
-                  className={`px-3 py-1 text-sm rounded-full transition-colors ${
-                    selectedTags.has(tag)
+                  className={`px-3 py-1 text-sm rounded-full transition-colors ${selectedTags.has(tag)
                       ? 'bg-blue-600 text-white'
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                  }`}
+                    }`}
                 >
                   {tag.replace('-', ' ')}
                 </button>
