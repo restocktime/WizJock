@@ -40,11 +40,14 @@ function AnalyticsTracker() {
   return null;
 }
 
+import ScrollToTop from './components/ScrollToTop';
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <AnalyticsTracker />
+        <ScrollToTop />
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path="/" element={<LandingPage />} />
