@@ -28,7 +28,8 @@ interface ApplicationMetrics {
   };
 }
 
-const API_URL = (import.meta as any).env?.VITE_API_URL || 'http://localhost:3000/api';
+const productionBackendUrl = 'https://wizjock-backend.railway.app';
+const API_URL = import.meta.env.VITE_API_URL || productionBackendUrl;
 
 const Applications: React.FC = () => {
   const [applications, setApplications] = useState<Application[]>([]);
