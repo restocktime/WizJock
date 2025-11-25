@@ -1,79 +1,113 @@
-# Admin Dashboard Deployment Guide
+# 🚀 Quick Fix: Deploy Admin Dashboard to Vercel
 
-## Overview
-The admin dashboard needs to be deployed separately from the client portal to `admin.wizjock.com`.
+## The Problem
+The admin dashboard has a dependency on `@sportsbook/shared-types` which is a local workspace package. Vercel needs special configuration to handle monorepo workspaces.
 
-## Deployment Steps
+## Solution: Deploy from Vercel Dashboard
 
-### 1. Create New Vercel Project for Admin Dashboard
+### Step 1: Create New Vercel Project
 
-1. Go to [Vercel Dashboard](https://vercel.com/dashboard)
-2. Click "Add New" → "Project"
-3. Import your GitHub repository: `restocktime/WizJock`
-4. Configure the project:
-   - **Project Name:** `wizjock-admin`
-   - **Framework Preset:** Other
-   - **Root Directory:** Leave as `.` (root) - DO NOT change this!
-   - The `vercel.json` in `packages/admin-dashboard/` will handle the build
+1. Go to https://vercel.com/dashboard
+2. Click **"Add New"** → **"Project"**
+3. Select your repository: **`restocktime/WizJock`**
 
-### 2. Configure Environment Variables
+### Step 2: Configure Build Settings
 
-In the Vercel project settings, add:
+**IMPORTANT:** Use these exact settings:
 
+- **Project Name:** `wizjock-admin` (or any name you prefer)
+- **Framework Preset:** **Other**
+- **Root Directory:** `.` (leave as root - don't change!)
+- **Build Command:** 
+  ```bash
+  npm install && npm run build --workspace=packages/shared-types && npm run build --workspace=packages/admin-dashboard
+  ```
+- **Output Directory:** 
+  ```
+  packages/admin-dashboard/dist
+  ```
+- **Install Command:**
+  ```bash
+  npm install
+  ```
+
+### Step 3: Add Environment Variables (Optional)
+
+If you have a backend API deployed, add:
 ```
-VITE_API_URL=https://api.wizjock.com
+VITE_API_URL=https://your-api-url.com
 ```
 
-(Or your backend API URL)
+Otherwise, skip this for now.
 
-### 3. Configure Custom Domain
+### Step 4: Deploy
 
-1. In Vercel project settings, go to "Domains"
+1. Click **"Deploy"**
+2. Wait for build to complete (should take 2-3 minutes)
+3. Once deployed, you'll get a URL like `wizjock-admin.vercel.app`
+
+### Step 5: Add Custom Domain
+
+1. In your Vercel project, go to **Settings** → **Domains**
 2. Add domain: `admin.wizjock.com`
-3. Follow Vercel's instructions to add DNS records:
-   - Type: `CNAME`
-   - Name: `admin`
-   - Value: `cname.vercel-dns.com`
+3. Vercel will show you DNS records to add
+4. Go to your domain provider (Namecheap, GoDaddy, etc.)
+5. Add this DNS record:
+   ```
+   Type: CNAME
+   Name: admin
+   Value: cname.vercel-dns.com
+   TTL: Auto or 3600
+   ```
+6. Wait 5-10 minutes for DNS to propagate
 
-### 4. Deploy
-
-1. Click "Deploy" in Vercel
-2. Wait for deployment to complete
-3. Verify at `https://admin.wizjock.com`
-
-## DNS Configuration
-
-Add this record to your domain provider (e.g., Namecheap, GoDaddy, Cloudflare):
-
-```
-Type: CNAME
-Host: admin
-Value: cname.vercel-dns.com
-TTL: Automatic or 3600
-```
-
-## Testing
-
-After deployment:
+### Step 6: Test
 
 1. Visit `https://wizjock.com/admin-login`
 2. Should redirect to `https://admin.wizjock.com`
 3. Login with: `admin@example.com` / `admin123`
 
-## Current Setup
+## Alternative: Use Vercel CLI (Advanced)
 
-- **Client Portal:** `wizjock.com` (already deployed)
-- **Admin Dashboard:** `admin.wizjock.com` (needs deployment)
-- **Backend API:** Needs separate deployment (see backend deployment guide)
+If you prefer command line:
 
-## Files Modified
+```bash
+# Install Vercel CLI
+npm i -g vercel
 
-1. `packages/admin-dashboard/vercel.json` - Created Vercel config
-2. `packages/client-portal/src/pages/AdminLogin.tsx` - Updated redirect URL
+# Deploy from project root
+cd "/Users/iby/Desktop/IBY Picks"
+vercel --prod
 
-## Next Steps
+# Follow prompts:
+# - Link to existing project or create new
+# - Set build command as shown above
+# - Set output directory: packages/admin-dashboard/dist
+```
 
-1. Deploy admin dashboard to Vercel
-2. Configure `admin.wizjock.com` subdomain
-3. Update backend CORS to allow `admin.wizjock.com`
-4. Test the full flow
+## Troubleshooting
+
+### Build fails with "shared-types not found"
+- Make sure you're building from the **root directory** (`.`)
+- Make sure the build command includes building shared-types first
+
+### 404 errors after deployment
+- Check that output directory is set to `packages/admin-dashboard/dist`
+- Verify the `rewrites` in vercel.json are working
+
+### Can't access admin.wizjock.com
+- DNS can take up to 24 hours to propagate (usually 5-10 minutes)
+- Verify CNAME record is correct in your domain provider
+- Try accessing the vercel.app URL first to confirm deployment works
+
+## Current Status
+
+✅ Code pushed to GitHub
+✅ Vercel configuration files created
+⏳ Waiting for you to deploy via Vercel dashboard
+
+Once deployed, the flow will be:
+1. User visits `wizjock.com/admin-login`
+2. Redirects to `admin.wizjock.com`
+3. Shows admin login page
+4. User logs in with credentials
