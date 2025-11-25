@@ -122,7 +122,7 @@ export default function MemberExperience() {
                         <p>Welcome to the WizJock family! We're excited to have you on board.</p>
                         <p><strong>Your login credentials:</strong></p>
                         <ul className="list-disc pl-5 space-y-1">
-                          <li>Dashboard: app.wizjock.com</li>
+                          <li>Dashboard: client.wizjock.com</li>
                           <li>Username: your@email.com</li>
                           <li>Temporary Password: [secure-password]</li>
                         </ul>
