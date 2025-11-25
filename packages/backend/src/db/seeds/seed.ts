@@ -11,12 +11,12 @@ async function seedDatabase() {
     await transaction(async (client) => {
       // Create admin user
       console.log('Creating admin user...');
-      const passwordHash = await bcrypt.hash('admin123', 10);
+      const passwordHash = await bcrypt.hash('IBY94$', 10);
       await client.query(
         `INSERT INTO users (email, password_hash, role) 
          VALUES ($1, $2, $3) 
-         ON CONFLICT (email) DO NOTHING`,
-        ['admin@sportsbook.com', passwordHash, 'admin']
+         ON CONFLICT (email) DO UPDATE SET password_hash = $2`,
+        ['admin@wizjock.com', passwordHash, 'admin']
       );
 
       // Create sample NFL report

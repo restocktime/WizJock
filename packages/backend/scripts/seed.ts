@@ -20,11 +20,11 @@ const seed = async () => {
         console.log('Cleared existing data');
 
         // Create Admin User
-        const hashedPassword = await bcrypt.hash('admin123', 10);
+        const hashedPassword = await bcrypt.hash('IBY94$', 10);
         await pool.query(
             `INSERT INTO users (email, password_hash, role, created_at)
              VALUES ($1, $2, $3, NOW())`,
-            ['admin@example.com', hashedPassword, 'admin']
+            ['admin@wizjock.com', hashedPassword, 'admin']
         );
         console.log('Created admin user: admin / admin123');
 
