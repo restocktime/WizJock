@@ -4,7 +4,7 @@ import { OptimizedLogo } from '../components/OptimizedImage';
 export default function MemberLogin() {
     useEffect(() => {
         // Redirect to member dashboard (adjust URL based on your deployment)
-        const memberUrl = import.meta.env.VITE_MEMBER_URL || 'http://localhost:5175';
+        const memberUrl = import.meta.env.VITE_MEMBER_URL || 'https://app.wizjock.com';
         window.location.href = memberUrl;
     }, []);
 
