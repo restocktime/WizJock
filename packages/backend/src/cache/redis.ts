@@ -9,8 +9,11 @@ export const connectRedis = async (): Promise<RedisClient> => {
     return redisClient;
   }
 
+  const redisUrl = process.env.REDIS_URL || 'redis://localhost:6379';
+  console.log('Connecting to Redis at:', redisUrl.replace(/:[^:@]*@/, ':****@')); // Log URL with masked password
+
   const client = createClient({
-    url: process.env.REDIS_URL || 'redis://localhost:6379',
+    url: redisUrl,
   });
 
   client.on('error', (err) => {
