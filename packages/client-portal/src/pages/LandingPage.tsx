@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import PerformanceDisclaimer from '../components/PerformanceDisclaimer';
 import ComingSoonModal from '../components/ComingSoonModal';
-import { OptimizedImage, OptimizedLogo } from '../components/OptimizedImage';
+import { OptimizedLogo } from '../components/OptimizedImage';
 import { CardShuffle } from '../components/CardShuffle';
 import { trackCTAClick, trackWhatsAppClick } from '../utils/analytics';
 
