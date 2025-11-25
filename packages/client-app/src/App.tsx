@@ -4,6 +4,10 @@ import { Layout } from './components/Layout';
 import { ErrorBoundary } from './components/ErrorBoundary';
 
 import { SportPicksContainer } from './components/SportPicksContainer';
+import Injuries from './pages/Injuries';
+import Schedule from './pages/Schedule';
+import ReferralProgram from './pages/ReferralProgram';
+import ClientInfo from './pages/ClientInfo';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,6 +26,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Navigate to="/nfl" replace />} />
+              <Route path="injuries" element={<Injuries />} />
+              <Route path="schedule" element={<Schedule />} />
+              <Route path="referral" element={<ReferralProgram />} />
+              <Route path="info" element={<ClientInfo />} />
               <Route path=":sport" element={<SportPicksContainer />} />
             </Route>
           </Routes>
