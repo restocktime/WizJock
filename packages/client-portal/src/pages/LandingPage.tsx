@@ -1,19 +1,14 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 import PerformanceDisclaimer from '../components/PerformanceDisclaimer';
 import ComingSoonModal from '../components/ComingSoonModal';
-import { OptimizedLogo } from '../components/OptimizedImage';
 import { CardShuffle } from '../components/CardShuffle';
 import { trackCTAClick, trackWhatsAppClick } from '../utils/analytics';
 
 export default function LandingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-black to-gray-900">
@@ -23,117 +18,7 @@ export default function LandingPage() {
       </a>
 
       {/* Navigation Header */}
-      <header className="bg-black/95 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-800" role="banner">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between h-16 sm:h-20">
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 sm:gap-3">
-              <OptimizedLogo alt="WizJock logo" className="h-8 sm:h-12 w-auto" />
-              <span className="text-lg sm:text-2xl font-black text-white">WIZJOCK</span>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
-              <Link to="/about" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
-                About Us
-              </Link>
-              <Link to="/why-us" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
-                Why Us
-              </Link>
-              <Link to="/how-it-works" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
-                How It Works
-              </Link>
-              <Link to="/member-experience" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
-                Member Experience
-              </Link>
-              <Link to="/contact" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
-                Contact
-              </Link>
-            </nav>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden text-white p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
-              aria-label="Toggle menu"
-              aria-expanded={isMobileMenuOpen}
-            >
-              {isMobileMenuOpen ? (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
-
-            {/* CTA Button - Desktop */}
-            <Link
-              to="/apply"
-              onClick={() => trackCTAClick('header')}
-              className="hidden lg:flex bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold px-6 py-3 rounded-lg text-sm min-h-[44px] items-center"
-              aria-label="Get started with WizJock"
-            >
-              GET STARTED
-            </Link>
-          </div>
-
-          {/* Mobile Menu */}
-          {isMobileMenuOpen && (
-            <nav className="lg:hidden py-4 border-t border-gray-800" aria-label="Mobile navigation">
-              <div className="flex flex-col space-y-4">
-                <Link
-                  to="/about"
-                  onClick={closeMobileMenu}
-                  className="text-gray-300 hover:text-white transition-colors text-base font-medium py-2"
-                >
-                  About Us
-                </Link>
-                <Link
-                  to="/why-us"
-                  onClick={closeMobileMenu}
-                  className="text-gray-300 hover:text-white transition-colors text-base font-medium py-2"
-                >
-                  Why Us
-                </Link>
-                <Link
-                  to="/how-it-works"
-                  onClick={closeMobileMenu}
-                  className="text-gray-300 hover:text-white transition-colors text-base font-medium py-2"
-                >
-                  How It Works
-                </Link>
-                <Link
-                  to="/member-experience"
-                  onClick={closeMobileMenu}
-                  className="text-gray-300 hover:text-white transition-colors text-base font-medium py-2"
-                >
-                  Member Experience
-                </Link>
-                <Link
-                  to="/contact"
-                  onClick={closeMobileMenu}
-                  className="text-gray-300 hover:text-white transition-colors text-base font-medium py-2"
-                >
-                  Contact
-                </Link>
-                <Link
-                  to="/apply"
-                  onClick={() => {
-                    trackCTAClick('mobile_menu');
-                    closeMobileMenu();
-                  }}
-                  className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold px-6 py-3 rounded-lg text-center min-h-[44px] flex items-center justify-center"
-                >
-                  GET STARTED
-                </Link>
-              </div>
-            </nav>
-          )}
-        </div>
-      </header>
+      <Header />
 
       {/* Hero - Bold & Direct */}
       <main id="main-content">

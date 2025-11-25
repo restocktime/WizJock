@@ -23,6 +23,10 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 const AdminLogin = lazy(() => import('./pages/AdminLogin'));
 const MemberLogin = lazy(() => import('./pages/MemberLogin'));
 const Wishlist = lazy(() => import('./pages/Wishlist'));
+const Injuries = lazy(() => import('./pages/Injuries'));
+const Schedule = lazy(() => import('./pages/Schedule'));
+const ReferralProgram = lazy(() => import('./pages/ReferralProgram'));
+const ClientInfo = lazy(() => import('./pages/ClientInfo'));
 
 // Loading component
 import LoadingSpinner from './components/LoadingSpinner';
@@ -59,6 +63,10 @@ function App() {
             <Route path="/why-us" element={<WhyUs />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/member-experience" element={<MemberExperience />} />
+            <Route path="/injuries" element={<Injuries />} />
+            <Route path="/schedule" element={<Schedule />} />
+            <Route path="/referral" element={<ReferralProgram />} />
+            <Route path="/client-info" element={<ClientInfo />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/locations" element={<LocationIndex />} />
             <Route path="/locations/:stateSlug" element={<StatePage />} />

@@ -312,4 +312,104 @@ router.get('/picks/:pickId/props', async (req: Request, res: Response, next: Nex
   }
 });
 
+// GET /api/injuries - Get recent injuries from published reports
+router.get('/injuries', async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const cacheKey = 'client:injuries';
+    const cachedData = await CacheService.get(cacheKey);
+
+    if (cachedData) {
+      res.set('Cache-Control', 'public, max-age=300');
+      return res.json(cachedData);
+    }
+
+    // Get injuries from published reports, ordered by reported date
+    const result = await pool.query(`
+      SELECT 
+        i.player_name,
+        i.team,
+        i.status,
+        i.injury_type,
+        i.impact,
+        i.details,
+        i.reported_at,
+        r.sport
+      FROM injuries i
+      INNER JOIN reports r ON i.report_id = r.id
+      WHERE r.status = 'published'
+      ORDER BY i.reported_at DESC
+      LIMIT 50
+    `);
+
+    const injuries = result.rows.map(row => ({
+      playerName: row.player_name,
+      team: row.team,
+      status: row.status,
+      injuryType: row.injury_type,
+      impact: row.impact,
+      details: row.details,
+      reportedAt: row.reported_at,
+      sport: row.sport,
+    }));
+
+    const response = {
+      success: true,
+      injuries,
+    };
+
+    await CacheService.set(cacheKey, response, 300);
+    res.set('Cache-Control', 'public, max-age=300');
+    res.json(response);
+  } catch (error) {
+    next(error);
+  }
+});
+
+// GET /api/schedule - Get upcoming games/fights from published reports
+router.get('/schedule', async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const cacheKey = 'client:schedule';
+    const cachedData = await CacheService.get(cacheKey);
+
+    if (cachedData) {
+      res.set('Cache-Control', 'public, max-age=300');
+      return res.json(cachedData);
+    }
+
+    // Get unique games/fights from published picks
+    // Group by game_time and matchup to avoid duplicates if multiple picks exist for same game
+    const result = await pool.query(`
+      SELECT DISTINCT ON (p.matchup, p.game_time)
+        p.matchup,
+        p.game_time,
+        r.sport,
+        COUNT(p.id) as pick_count
+      FROM picks p
+      INNER JOIN reports r ON p.report_id = r.id
+      WHERE r.status = 'published' AND p.game_time > NOW()
+      GROUP BY p.matchup, p.game_time, r.sport
+      ORDER BY p.game_time ASC
+      LIMIT 50
+    `);
+
+    const schedule = result.rows.map(row => ({
+      matchup: row.matchup,
+      gameTime: row.game_time,
+      sport: row.sport,
+      pickCount: parseInt(row.pick_count),
+    }));
+
+    const response = {
+      success: true,
+      schedule,
+    };
+
+    await CacheService.set(cacheKey, response, 300);
+    res.set('Cache-Control', 'public, max-age=300');
+    res.json(response);
+  } catch (error) {
+    next(error);
+  }
+});
+
 export default router;
