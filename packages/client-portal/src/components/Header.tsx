@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { trackCTAClick } from '../utils/analytics';
-import logo from '../assets/wizjock-logo.png';
 
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -29,7 +28,7 @@ export default function Header() {
                 <div className="flex items-center justify-between h-16 sm:h-20">
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-2 sm:gap-3">
-                        <img src={logo} alt="WizJock logo" className="h-8 sm:h-12 w-auto" />
+                        <img src="/wizjock-logo.png" alt="WizJock logo" className="h-8 sm:h-12 w-auto" />
                     </Link>
 
                     {/* Desktop Navigation */}
