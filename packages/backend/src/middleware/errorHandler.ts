@@ -25,7 +25,8 @@ const sendErrorProd = (err: AppError, res: Response) => {
     logger.error(`PROGRAMMING ERROR: ${err.message}`, { error: err });
     res.status(500).json({
       status: 'error',
-      message: 'Something went very wrong!',
+      message: err.message, // Temporarily exposing error message for debugging
+      stack: err.stack, // Temporarily exposing stack for debugging
     });
   }
 };
