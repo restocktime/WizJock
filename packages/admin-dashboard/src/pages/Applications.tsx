@@ -28,7 +28,7 @@ interface ApplicationMetrics {
   };
 }
 
-const productionBackendUrl = 'https://wizjock-backend.railway.app';
+const productionBackendUrl = 'https://wizjock-production.up.railway.app';
 const API_URL = import.meta.env.VITE_API_URL || productionBackendUrl;
 
 const Applications: React.FC = () => {
