@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Pick, PickHierarchy } from '@sportsbook/shared-types';
+import { Pick, PickHierarchy } from '../types';
 
 interface PickEditorProps {
   pick: Pick;

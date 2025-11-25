@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { Sport, ReportStatus, Report } from '@sportsbook/shared-types';
+import type { Sport, ReportStatus, Report } from '../types';
 import { useGetReports, usePublishReport } from '../hooks/useReports';
 import { useUnpublishReport } from '../hooks/useUnpublishReport';
 

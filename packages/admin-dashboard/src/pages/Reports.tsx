@@ -6,7 +6,7 @@ import type {
   Pick,
   InjuryUpdate,
   PlayerProp,
-} from '@sportsbook/shared-types';
+} from '../types';
 import { PickEditor } from '../components/PickEditor';
 import { PlayerPropsManager } from '../components/PlayerPropsManager';
 import { useGenerateReport, usePublishReport, useGetReports } from '../hooks/useReports';

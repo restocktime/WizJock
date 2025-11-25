@@ -8,7 +8,7 @@ import type {
   CreateInjuryRequest,
   UpdateInjuryRequest,
   Pick,
-} from '@sportsbook/shared-types';
+} from '../types';
 
 const INJURY_STATUSES: InjuryStatus[] = ['out', 'questionable', 'probable', 'season-ending'];
 const INJURY_IMPACTS: InjuryImpact[] = ['critical', 'moderate', 'minor'];

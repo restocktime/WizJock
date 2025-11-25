@@ -6,7 +6,7 @@ import type {
   Pick,
   CreateLineMovementRequest,
   Sport,
-} from '@sportsbook/shared-types';
+} from '../types';
 
 interface PickWithMovements extends Pick {
   movements: LineMovement[];

@@ -1,6 +1,6 @@
 {
-    "buildCommand": "npm install && npm run build --workspace=packages/shared-types && npm run build --workspace=packages/admin-dashboard",
-    "outputDirectory": "packages/admin-dashboard/dist",
+    "buildCommand": "npm install && npm run build",
+    "outputDirectory": "dist",
     "installCommand": "npm install",
     "framework": null,
     "rewrites": [

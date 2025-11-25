@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useGetReports } from '../hooks/useReports';
-import { OptimizedLogo } from '../../../client-portal/src/components/OptimizedImage'; // Attempting to import, might need adjustment or mock
+
 
 export const ReportPreview = () => {
     const { id } = useParams<{ id: string }>();
@@ -53,14 +53,14 @@ export const ReportPreview = () => {
                             {report.picks.map(pick => (
                                 <div key={pick.id} className="border rounded-lg p-6 bg-gray-50 relative overflow-hidden">
                                     <div className={`absolute top-0 left-0 w-1 h-full ${pick.hierarchy === 'lock' ? 'bg-yellow-500' :
-                                            pick.hierarchy === 'featured' ? 'bg-blue-500' : 'bg-gray-300'
+                                        pick.hierarchy === 'featured' ? 'bg-blue-500' : 'bg-gray-300'
                                         }`} />
 
                                     <div className="flex justify-between items-start mb-4">
                                         <div>
                                             <div className="flex items-center gap-2 mb-1">
                                                 <span className={`text-xs font-bold px-2 py-0.5 rounded uppercase ${pick.hierarchy === 'lock' ? 'bg-yellow-100 text-yellow-800' :
-                                                        pick.hierarchy === 'featured' ? 'bg-blue-100 text-blue-800' : 'bg-gray-200 text-gray-700'
+                                                    pick.hierarchy === 'featured' ? 'bg-blue-100 text-blue-800' : 'bg-gray-200 text-gray-700'
                                                     }`}>
                                                     {pick.hierarchy}
                                                 </span>

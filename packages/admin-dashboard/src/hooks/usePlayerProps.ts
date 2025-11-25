@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
-import { PlayerProp } from '@sportsbook/shared-types';
+import { PlayerProp } from '../types';
 
 export const useAddPlayerProp = (onSuccess?: (data: { pickId: string; prop: PlayerProp }) => void) => {
     return useMutation({

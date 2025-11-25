@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
-import { Pick } from '@sportsbook/shared-types';
+import { Pick } from '../types';
 
 export const useUpdatePick = (onSuccess?: (updatedPick: Pick) => void) => {
 

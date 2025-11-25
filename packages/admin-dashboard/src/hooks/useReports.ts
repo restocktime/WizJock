@@ -6,7 +6,7 @@ import {
     PublishReportResponse,
     Report,
     ReportStatus,
-} from '@sportsbook/shared-types';
+} from '../types';
 
 interface GetReportsResponse {
     success: boolean;

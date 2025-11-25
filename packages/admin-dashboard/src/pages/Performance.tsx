@@ -11,7 +11,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import type { Sport, BetType, PickHierarchy } from '@sportsbook/shared-types';
+import type { Sport, BetType, PickHierarchy } from '../types';
 
 interface PerformanceData {
   success: boolean;

@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
-import { UnpublishReportResponse } from '@sportsbook/shared-types';
+import { UnpublishReportResponse } from '../types';
 
 export const useUnpublishReport = (onSuccess?: () => void) => {
     const queryClient = useQueryClient();

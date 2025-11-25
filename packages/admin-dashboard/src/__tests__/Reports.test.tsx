@@ -4,7 +4,7 @@ import { Reports } from '../pages/Reports';
 import * as useReports from '../hooks/useReports';
 import * as usePicks from '../hooks/usePicks';
 import * as usePlayerProps from '../hooks/usePlayerProps';
-import { Report, Pick } from '@sportsbook/shared-types';
+import { Report, Pick } from '../types';
 
 // Mock the hooks
 vi.mock('../hooks/useReports');

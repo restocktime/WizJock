@@ -6,7 +6,7 @@ import type {
   IntelligenceUpdateType,
   IntelligenceSourceType,
   CreateIntelligenceRequest,
-} from '@sportsbook/shared-types';
+} from '../types';
 
 const UPDATE_TYPES: IntelligenceUpdateType[] = [
   'training',

@@ -3,7 +3,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { Publishing } from '../pages/Publishing';
 import * as useReports from '../hooks/useReports';
 import * as useUnpublishReport from '../hooks/useUnpublishReport';
-import { Report } from '@sportsbook/shared-types';
+import { Report } from '../types';
 
 // Mock the hooks
 vi.mock('../hooks/useReports');

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Pick, PlayerProp, OverUnder } from '@sportsbook/shared-types';
+import { Pick, PlayerProp, OverUnder } from '../types';
 
 interface PlayerPropsManagerProps {
     pick: Pick;
