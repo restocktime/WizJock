@@ -40,7 +40,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       // Use axios defaults which is already configured with the base URL
       const response = await axios.post('/api/auth/login', { email, password });
-      const { token, user: userData } = response.data;
+      const { token } = response.data;
 
       if (!token) {
         throw new Error('No token received from server');
